@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leonardo Neves | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="logo">Portfolio</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero" data-aos="fade-up">
+    <div class="hero-content">
+      <h2>Game Developer</h2>
+      <p>Programmer | 3D Modeler</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about" data-aos="fade-right">
+    <div class="container about-container">
+      <div class="about-image" data-aos="zoom-in">
+        <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
+      </div>
+      <div class="about-text" data-aos="fade-left">
+        <h2>About Me</h2>
+        <p>
+          Passionate about game development, I explore the art and science behind interactive storytelling. With expertise in Unity, Unreal Engine, and 3D modeling, I create immersive experiences that captivate audiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects" data-aos="fade-up">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Dragon's Spite Project -->
+        <article class="project-card" data-aos="flip-left">
+          <div class="project-info">
+            <h3>Dragon's Spite</h3>
+            <p>A creative project using Unity and C#.</p>
+            <a href="https://oddreen.itch.io/dragons-spite" class="demo-link" target="_blank">Itch.io Demo</a>
+            <div class="project-video">
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/ZGHiNfHTSZo?si=eVV_ZkEWJw9e9oCg" 
+                title="Dragon's Spite Gameplay" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slashing Monsters Project -->
+        <article class="project-card" data-aos="flip-right">
+          <div class="project-info">
+            <h3>Crestforge Curse</h3>
+            <p>An action-packed game showcasing my skills in Unreal Engine.</p>
+            <a href="https://oddreen.itch.io/slashing-monsters" class="demo-link" target="_blank">Itch.io Demo</a>
+          </div>
+        </article>
+
+        <!-- Sushi Cats Project -->
+        <article class="project-card" data-aos="zoom-in">
+          <div class="project-info">
+            <h3>Sushi Cats</h3>
+            <p>A fun and engaging game featuring adorable cats and sushi mechanics.</p>
+            <a href="https://oddreen.itch.io/sushi-cats" class="demo-link" target="_blank">Itch.io Demo</a>
+            <div class="project-video">
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/CFKRmCNuMeY" 
+                title="Sushi Cats Gameplay" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="animated" style="--delay: 0.5s;">Get In Touch</h2>
+      <form class="contact-form animated" style="--delay: 0.7s;">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:leonardovneves2002@gmail.com">leonardovneves2002@gmail.com</a></p>
+        <p>Portfolio: <a href="https://oddreen.itch.io/" target="_blank">oddreen.itch.io</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Leonardo Neves. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Whether animation should happen only once
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      const setActiveLink = () => {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
+
+          // Check if the middle of the viewport is within the section
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(currentSection)) {
+            link.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", setActiveLink);
+    });
+  </script>
+</body>
+</html>
