@@ -9,42 +9,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <!-- AOS Library -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-container">
-      <h1 class="logo">Portfolio</h1>
+      <h1 class="logo">Leonardo Neves</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="#hero" class="nav-link">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero" data-aos="fade-up">
-    <div class="hero-content">
-      <h2>Game Developer</h2>
-      <p>Programmer | 3D Modeler</p>
-    </div>
-  </section>
-
   <!-- About Section -->
-  <section id="about" class="about" data-aos="fade-right">
-    <div class="container about-container">
+  <section id="about" class="about" data-aos="fade-up">
+    <div class="about-container">
       <div class="about-image" data-aos="zoom-in">
         <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
       </div>
       <div class="about-text" data-aos="fade-left">
-        <h2>About Me</h2>
+        <h2 class="hover-wave">About Me</h2>
         <p>
-            I'm Leonardo Neves, a game developer with a passion for creating engaging and interactive experiences. I specialize in Unity and Unreal Engine, and I'm skilled in C#, C++, and 3D modeling. I'm always looking for new opportunities to learn and grow as a developer.
+          I'm Leonardo Neves, a game developer skilled in Unity, Unreal Engine, C#, C++, and 3D modeling. I love creating immersive and interactive experiences that captivate audiences.
         </p>
+        <p>
+          My passion lies in solving complex problems and pushing creative boundaries to bring ideas to life.
+        </p>
+        <a href="#projects" class="cta-button">View My Projects</a>
       </div>
     </div>
   </section>
@@ -52,7 +54,7 @@
   <!-- Projects Section -->
   <section id="projects" class="projects" data-aos="fade-up">
     <div class="container">
-      <h2>Projects</h2>
+      <h2 class="hover-wave">Projects</h2>
       <div class="projects-grid">
         <!-- Dragon's Spite Project -->
         <article class="project-card" data-aos="flip-left">
@@ -67,7 +69,7 @@
           </div>
         </article>
 
-        <!-- Slashing Monsters Project -->
+        <!-- Crestforge Curse Project -->
         <article class="project-card" data-aos="flip-right">
           <div class="project-info">
             <h3>Crestforge Curse</h3>
@@ -92,25 +94,75 @@
     </div>
   </section>
 
+  <!-- Education Section -->
+  <section id="education" class="education" data-aos="fade-up">
+    <div class="container">
+      <h2 class="hover-wave">Education</h2>
+      <div class="education-grid">
+        <div class="education-item">
+          <h3>Licenciatura em Videojogos e Aplicações Multimédia</h3>
+          <p>Universidade Lusófona do Porto</p>
+          <p>3 Oct 2021 – 5 Jul 2024</p>
+          <p>Porto, Portugal</p>
+          <a href="https://www.ulusofona.pt" target="_blank">Visit Website</a>
+        </div>
+        <div class="education-item">
+          <h3>Unreal Engine 5 C++ Developer</h3>
+          <p>Udemy</p>
+          <p>Current</p>
+          <a href="https://www.udemy.com/course/unrealcourse/" target="_blank">Visit Course</a>
+        </div>
+        <div class="education-item">
+          <h3>Blender Character Creator</h3>
+          <p>Udemy</p>
+          <p>Current</p>
+          <a href="https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1" target="_blank">Visit Course</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience" data-aos="fade-up">
+    <div class="container">
+      <h2 class="hover-wave">Experience</h2>
+      <ul class="experience-list">
+        <li>C++</li>
+        <li>C#</li>
+        <li>Blender</li>
+        <li>Unreal Engine</li>
+        <li>Unity</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="animated" style="--delay: 0.5s;">Get In Touch</h2>
-      <form class="contact-form animated" style="--delay: 0.7s;">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your Name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your Email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
+      <h2 class="hover-wave">Contact</h2>
       <div class="contact-info">
-        <p>Email: <a href="mailto:leonardovneves2002@gmail.com">leonardovneves2002@gmail.com</a></p>
-        <p>Portfolio: <a href="https://oddreen.itch.io/" target="_blank">oddreen.itch.io</a></p>
+        <div class="contact-item">
+          <img src="Images/gmail.png" alt="Email Icon" />
+          <p><strong>Email:</strong>
+            <a href="mailto:leonardovneves2002@gmail.com">leonardovneves2002@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <img src="Images/itchio-textless-black.svg" alt="Portfolio Icon" />
+          <p><strong>Itch.io:</strong>
+            <a href="https://oddreen.itch.io/" target="_blank">oddreen.itch.io</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <img src="Images/artstation.png" alt="ArtStation Icon" />
+          <p><strong>ArtStation:</strong>
+            <a href="https://www.artstation.com/oddeven" target="_blank">artstation.com/oddeven</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -157,6 +209,12 @@
       };
 
       window.addEventListener("scroll", setActiveLink);
+    });
+  </script>
+  <!-- Initialize Particles.js -->
+  <script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('Particles.js loaded');
     });
   </script>
 </body>
