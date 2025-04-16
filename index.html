@@ -7,15 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- AOS Library -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- Particles Background -->
-  <div id="particles-js"></div>
-
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-container">
@@ -33,12 +26,12 @@
   </header>
 
   <!-- About Section -->
-  <section id="about" class="about" data-aos="fade-up">
+  <section id="about" class="about">
     <div class="about-container">
-      <div class="about-image" data-aos="zoom-in">
+      <div class="about-image">
         <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
       </div>
-      <div class="about-text" data-aos="fade-left">
+      <div class="about-text">
         <h2 class="hover-wave">About Me</h2>
         <p>
           I'm Leonardo Neves, a game developer skilled in Unity, Unreal Engine, C#, C++, and 3D modeling. I love creating immersive and interactive experiences that captivate audiences.
@@ -52,25 +45,27 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects" data-aos="fade-up">
+  <section id="projects" class="projects">
     <div class="container">
-      <h2 class="hover-wave">Projects</h2>
+      <h2 class="hover-wave">Game Projects</h2>
       <div class="projects-grid">
         <!-- Dragon's Spite Project -->
-        <article class="project-card" data-aos="flip-left">
+        <article class="project-card">
+          <div class="project-gif">
+            <img src="Images/dragons-spite.gif" alt="Dragon's Spite Gameplay" />
+          </div>
           <div class="project-info">
             <h3>Dragon's Spite</h3>
             <p>A creative project using Unity and C#.</p>
             <a href="https://oddreen.itch.io/dragons-spite" class="demo-link" target="_blank">Itch.io Demo</a>
-            <div class="project-video">
-              <iframe width="100%" height="200" src="https://www.youtube.com/embed/ZGHiNfHTSZo?si=eVV_ZkEWJw9e9oCg" 
-                title="Dragon's Spite Gameplay" frameborder="0" allowfullscreen></iframe>
-            </div>
           </div>
         </article>
 
         <!-- Crestforge Curse Project -->
-        <article class="project-card" data-aos="flip-right">
+        <article class="project-card">
+          <div class="project-gif">
+            <img src="Images/crestforge-curse.gif" alt="Crestforge Curse Gameplay" />
+          </div>
           <div class="project-info">
             <h3>Crestforge Curse</h3>
             <p>An action-packed game showcasing my skills in Unreal Engine.</p>
@@ -79,15 +74,14 @@
         </article>
 
         <!-- Sushi Cats Project -->
-        <article class="project-card" data-aos="zoom-in">
+        <article class="project-card">
+          <div class="project-gif">
+            <img src="Images/sushi-cats.gif" alt="Sushi Cats Gameplay" />
+          </div>
           <div class="project-info">
             <h3>Sushi Cats</h3>
             <p>A fun and engaging game featuring adorable cats and sushi mechanics.</p>
             <a href="https://oddreen.itch.io/sushi-cats" class="demo-link" target="_blank">Itch.io Demo</a>
-            <div class="project-video">
-              <iframe width="100%" height="200" src="https://www.youtube.com/embed/CFKRmCNuMeY" 
-                title="Sushi Cats Gameplay" frameborder="0" allowfullscreen></iframe>
-            </div>
           </div>
         </article>
       </div>
@@ -95,7 +89,7 @@
   </section>
 
   <!-- Education Section -->
-  <section id="education" class="education" data-aos="fade-up">
+  <section id="education" class="education">
     <div class="container">
       <h2 class="hover-wave">Education</h2>
       <div class="education-grid">
@@ -123,7 +117,7 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="experience" data-aos="fade-up">
+  <section id="experience" class="experience">
     <div class="container">
       <h2 class="hover-wave">Experience</h2>
       <ul class="experience-list">
@@ -173,49 +167,5 @@
       <p>&copy; 2025 Leonardo Neves. All rights reserved.</p>
     </div>
   </footer>
-  <!-- AOS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Whether animation should happen only once
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      const setActiveLink = () => {
-        let currentSection = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
-
-          // Check if the middle of the viewport is within the section
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").includes(currentSection)) {
-            link.classList.add("active");
-          }
-        });
-      };
-
-      window.addEventListener("scroll", setActiveLink);
-    });
-  </script>
-  <!-- Initialize Particles.js -->
-  <script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('Particles.js loaded');
-    });
-  </script>
 </body>
 </html>
