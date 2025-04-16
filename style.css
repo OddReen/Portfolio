@@ -331,6 +331,14 @@ body {
   color: #e67600;
 }
 
+/* Divider */
+.divider {
+  width: 100%;
+  height: 2px;
+  background: var(--cards-color);
+  border-radius: 1px;
+}
+
 /* Footer */
 .site-footer {
   background: var(--primary-color);
@@ -342,4 +350,9 @@ body {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Add scroll padding for sections */
+section {
+  scroll-margin-top: 80px; /* Adjust this value based on your header height */
 }
