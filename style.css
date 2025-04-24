@@ -1,7 +1,7 @@
 /* CSS Variables for easy theme management */
 :root {
   --primary-color: #111;
-  --accent-color: #ff7300;
+  --accent-color: rgb(255, 115, 0);
   --text-color: hsl(0, 0%, 90%);
   --cards-color: #333;
   --font-family: 'Roboto', sans-serif;
@@ -42,8 +42,7 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content:space-evenly;
 }
 
 .logo {
@@ -60,7 +59,7 @@ body {
   color: #fff;
   text-decoration: none;
   transition: color var(--transition-speed);
-  font-size: 0.9rem;
+  font-size: 1.75rem;
 }
 
 .nav-links a:hover {
@@ -182,6 +181,24 @@ body {
   height: auto;
 }
 
+/* Project Header Styling */
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.project-header h3 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.project-header .link-button {
+  margin-left: 1rem; /* Add spacing between the title and the button */
+}
+
 /* Education Section */
 .education {
   background: var(--primary-color);
@@ -259,10 +276,11 @@ body {
 }
 
 .experience-list li {
-  background: var(--accent-color);
+  background: var(--cards-color);
   color: #fff;
   padding: 0.5rem 1rem;
-  /* border-radius: 5px; */
+  border-radius: 5px;
+  font-size: 1rem;
   font-size: 1rem;
   font-weight: bold;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
@@ -294,16 +312,39 @@ body {
   gap: 2rem;
 }
 
+/* Contact Item */
 .contact-item {
-  background: var(--cards-color);
-  padding: 1.5rem;
-  /* border-radius: 8px; */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 1rem;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  max-width: 400px;
+  max-width: 250px;
   width: 100%;
 }
 
+/* Contact Info Default State */
+.contact-item p,
+.contact-item a,
+.contact-item .copy-button,
+.contact-item .link-button {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color var(--transition-speed);
+  color: var(--text-color); /* Default color */
+}
+
+/* Contact Info Hover State */
+.contact-item:hover p,
+.contact-item:hover a,
+.contact-item:hover .copy-button,
+.contact-item:hover .link-button {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--accent-color); /* Change to accent color on hover */
+}
+
+/* Contact Item Hover Effect */
 .contact-item:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -312,10 +353,11 @@ body {
 .contact-item img {
   width: 50px;
   height: 50px;
+  filter: invert(1) sepia(0) saturate(1000%) hue-rotate(0deg) brightness(90%); /* Adjust for --text-color */
 }
 
 .contact-item p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin: 0;
   color: var(--text-color);
 }
@@ -331,12 +373,49 @@ body {
   color: #e67600;
 }
 
+/* Tooltip Styling */
+.copy-tooltip {
+  position: absolute;
+  bottom: -30px; /* Position below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInOutBelow 2s ease; /* Use the new animation */
+  pointer-events: none; /* Prevent interaction with the tooltip */
+}
+
+/* Tooltip Animation (Appear from Below) */
+@keyframes fadeInOutBelow {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px); /* Start below */
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Move into place */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px); /* Fade out below */
+  }
+}
+
 /* Divider */
 .divider {
-  width: 100%;
+  background: var(--primary-color);
+}
+.divider-line {
+  width: 75%;
+  margin-inline: auto;
   height: 2px;
   background: var(--cards-color);
   border-radius: 1px;
+  align-content: center;
 }
 
 /* Footer */
@@ -355,4 +434,62 @@ html {
 /* Add scroll padding for sections */
 section {
   scroll-margin-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Copy Button Styling */
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0.5rem; /* Add margin around the button */
+  display: inline-block;
+  position: relative; /* Ensure the tooltip is positioned relative to the button */
+}
+
+.copy-button img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.copy-button:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Copy Button Hover */
+.copy-button:hover {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(78%) saturate(5412%) hue-rotate(3deg) brightness(109%) contrast(102%);
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.copy-button:hover img {
+  filter: brightness(0) invert(1); /* Ensure the icon contrasts with the new background */
+}
+
+/* Link Button Styling */
+.link-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0.5rem; /* Add margin around the button */
+  display: inline-block;
+  position: relative; /* Ensure tooltip or other elements are positioned correctly */
+}
+
+.link-button img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Ensure the icon contrasts with the text color */
+  transition: transform 0.2s ease;
+}
+
+.link-button:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  filter: brightness(0) saturate(100%) invert(62%) sepia(78%) saturate(5412%) hue-rotate(3deg) brightness(109%) contrast(102%);}
+
+/* Link Button Hover */
+.link-button:hover {
+  border-radius: 5px; /* Optional: Add rounded corners */
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Neves | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
@@ -12,7 +13,7 @@
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-container">
-      <h1 class="logo">Leonardo Neves</h1>
+      <h1 class="logo">Leonardo <br> Neves</h1>
       <nav>
         <ul class="nav-links">
           <li><a href="#about" class="nav-link">About</a></li>
@@ -45,7 +46,9 @@
   </section>
 
   <!-- Divider -->
-  <div class="divider"></div>
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
 
   <!-- Game Projects Section -->
   <section id="game-projects" class="projects">
@@ -58,7 +61,9 @@
             <img src="Images/Orc.gif" alt="Orc Gif" />
           </div>
           <div class="project-info">
-            <h3>Orc 3D Model</h3>
+            <div class="project-header">
+              <h3>Orc 3D Model - WIP</h3>
+            </div>
             <p>- Made in Blender</p>
             <p>- Low Poly Retopology, Down To 3,600 faces</p>
             <p>- Full Resolution Model With 250,000 faces (The one in the gif)</p>
@@ -72,12 +77,16 @@
             <img src="Images/dragons-spite.gif" alt="Dragon's Spite Gameplay" />
           </div>
           <div class="project-info">
-            <h3>Dragon's Spite</h3>
+            <div class="project-header">
+              <h3>Dragon's Spite</h3>
+              <button class="link-button" onclick="goToLink('https://oddreen.itch.io/dragons-spite')">
+                <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
+              </button>
+            </div>
             <p>- Worked as a Programmer.</p>
             <p>- Made third person system with a flying and ground movement.</p>
             <p>- Made an AI Behavior Tree for villagers.</p>
             <p>- Made a combo system and a shooting fireballs mechanic.</p>
-            <a href="https://oddreen.itch.io/dragons-spite" class="demo-link" target="_blank">Itch.io Demo</a>
           </div>
         </article>
 
@@ -87,12 +96,16 @@
             <img src="Images/crestforge-curse.gif" alt="Crestforge Curse Gameplay" />
           </div>
           <div class="project-info">
-            <h3>Crestforge Curse</h3>
+            <div class="project-header">
+              <h3>Crestforge Curse</h3>
+              <button class="link-button" onclick="goToLink('https://oddreen.itch.io/slashing-monsters')">
+                <img src="Images/itchio-textless-black.png" alt="Go to Itch.io Demo" />
+              </button>
+            </div>
             <p>- Worked as a Programmer, Game Designer, and Producer.</p>
             <p>- Made the main feature which is to grab the enemies and use them as weapons.</p>
             <p>- Made a chronological task list for keeping track of the project.</p>
             <p>- Made the game design structure with diagrams and visual representations.</p>
-            <a href="https://oddreen.itch.io/slashing-monsters" class="demo-link" target="_blank">Itch.io Demo</a>
           </div>
         </article>
 
@@ -102,12 +115,16 @@
             <img src="Images/sushi-cats.gif" alt="Sushi Cats Gameplay" />
           </div>
           <div class="project-info">
-            <h3>Sushi Cats</h3>
+            <div class="project-header">
+              <h3>Sushi Cats</h3>
+              <button class="link-button" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">
+                <img src="Images/itchio-textless-black.png" alt="Go to Itch.io Demo" />
+              </button>
+            </div>
             <p>- Worked as a Programmer and Assistant Game Designer.</p>
             <p>- Made a 2D clicker with a side-scrolling camera movement.</p>
             <p>- Made a recipe check with an inventory system.</p>
             <p>- Made 4 timing minigames.</p>
-            <a href="https://oddreen.itch.io/sushi-cats" class="demo-link" target="_blank">Itch.io Demo</a>
           </div>
         </article>
       </div>
@@ -115,7 +132,9 @@
   </section>
 
   <!-- Divider -->
-  <div class="divider"></div>
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
 
   <!-- Education Section -->
   <section id="education" class="education">
@@ -146,7 +165,9 @@
   </section>
 
   <!-- Divider -->
-  <div class="divider"></div>
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
 
   <!-- Experience Section -->
   <section id="experience" class="experience">
@@ -167,7 +188,9 @@
   </section>
 
   <!-- Divider -->
-  <div class="divider"></div>
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -175,26 +198,44 @@
       <h2 class="hover-wave">Contact</h2>
       <div class="contact-info">
         <div class="contact-item">
+          <img src="Images/Phone.png" alt="Phone Icon" />
+          <p id="phone">932 707 987</p>
+          <button class="copy-button" onclick="copyToClipboard('phone')">
+            <img src="Images/copy-icon.png" alt="Copy phone number to clipboard" />
+          </button>
+        </div>
+        <div class="contact-item">
           <img src="Images/gmail.png" alt="Email Icon" />
-          <p><strong>Email:</strong>
-            <a href="mailto:leonardovneves2002@gmail.com">leonardovneves2002@gmail.com</a>
-          </p>
+          <p id="email">leonardovneves2002@gmail.com</p>
+          <button class="copy-button" onclick="copyToClipboard('email')">
+            <img src="Images/copy-icon.png" alt="Copy email to clipboard" />
+          </button>
+          <button class="link-button" onclick="goToLink('mailto:leonardovneves2002@gmail.com')">
+            <img src="Images/mail-to-icon.png" alt="Go to email link" />
+          </button>
         </div>
         <div class="contact-item">
           <img src="Images/itchio-textless-black.svg" alt="Portfolio Icon" />
-          <p><strong>Itch.io:</strong>
-            <a href="https://oddreen.itch.io/" target="_blank">oddreen.itch.io</a>
-          </p>
+          <p id="itchio">oddreen.itch.io</p>
+          <button class="link-button" onclick="goToLink('https://oddreen.itch.io/')">
+            <img src="Images/link-icon.png" alt="Go to Itch.io link" />
+          </button>
         </div>
         <div class="contact-item">
           <img src="Images/artstation.png" alt="ArtStation Icon" />
-          <p><strong>ArtStation:</strong>
-            <a href="https://www.artstation.com/oddeven" target="_blank">artstation.com/oddeven</a>
-          </p>
+          <p id="artstation">artstation.com/oddeven</p>
+          <button class="link-button" onclick="goToLink('https://www.artstation.com/oddeven')">
+            <img src="Images/link-icon.png" alt="Go to ArtStation link" />
+          </button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
