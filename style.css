@@ -47,6 +47,7 @@ body {
 
 .logo {
   font-size: 1.75rem;
+  margin-right: auto;
 }
 
 .nav-links {
@@ -59,7 +60,7 @@ body {
   color: #fff;
   text-decoration: none;
   transition: color var(--transition-speed);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 .nav-links a:hover {
