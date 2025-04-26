@@ -8,6 +8,8 @@
   <script src="script.js" defer></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" href="Images/Eu.jpg" type="image/jpeg" />
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -16,11 +18,11 @@
       <h1 class="logo">Leonardo Neves</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#about" class="nav-link">About me</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#work-experience" class="nav-link">Work Experience</a></li>
+          <li><a href="#experience" class="nav-link">Software Experience</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -29,19 +31,87 @@
 
   <!-- About Section -->
   <section id="about" class="about">
-    <div class="about-container">
-      <div class="about-image">
-        <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
+    <div class="container">
+      <div class="scrollable-wrapper">
+        <!-- About Me Pane -->
+        <div class="pane" id="about-pane">
+          <div class="about-container">
+            <div class="about-image">
+              <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
+            </div>
+            <div class="about-text">
+              <h2 class="hover-wave">About Me</h2>
+              <p>
+                I'm Leonardo Neves, a Portuguese game developer with a profound enthusiasm for creating innovative
+                game mechanics and systems.
+              </p>
+              <p>
+                Even though I am addicted to programming video games, I also have a background
+                and a keen interest in arts, making me a flexible asset for a game development environment.
+              </p>
+              <a href="#projects" class="cta-button">View My Projects</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Currently On Pane -->
+        <div class="pane" id="currently-on-pane">
+          <div class="currently-container">
+            <h2 class="hover-wave">Currently On</h2>
+            <div class="currently-grid">
+              <div class="currently-item">
+                  <div class="currently-img">
+                    <img src="Images/saberwide.png" alt="Internship at Saber Interactive Porto" />
+                  </div>
+                <h3>Internship at Saber Interactive Porto</h3>
+                <p>28 Apr 2025 – Current</p>
+                <p>Porto, Portugal</p>
+                <p>Visit Site Here</p>
+                <button class="link-button" onclick="goToLink('https://saber.games/')">
+                  <img src="Images/link-icon.png" alt="Go to Saber Interactive website" />
+                </button>
+              </div>
+              <div class="currently-item">
+                <div class="currently-img">
+                  <img src="Images/UnrealC.webp" alt="Unreal Engine 5 C++ Developer" />
+                </div>
+                <h3>Unreal Engine 5 C++ Developer</h3>
+                <p>Udemy - GameDev.tv</p>
+                <p>Current</p>
+                <p>Visit Site Here</p>
+                <button class="link-button" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">
+                  <img src="Images/link-icon.png" alt="Go to Unreal Engine course" />
+                </button>
+              </div>
+              <div class="currently-item">
+                <div class="currently-img">
+                  <img src="Images/BlenderCharacterCreator.webp" alt="Blender Character Creator" />
+                </div>
+                <h3>Blender Character Creator</h3>
+                <p>Udemy - GameDev.tv</p>
+                <p>Current</p>
+                <p>Visit Site Here</p>
+                <button class="link-button" onclick="goToLink('https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1')">
+                  <img src="Images/link-icon.png" alt="Go to Blender Character Creator course" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="about-text">
-        <h2 class="hover-wave">About Me</h2>
-        <p>
-            I'm Leonardo Neves, a portuguese game developer with a profound enthusiasm for creating innovative
-          game mechanics and systems.</p>
-          <p>
-            Even though I am addicted to programming video games, I also have a background
-          and a keen interest in arts, making me a flexible asset for a game development environment.        </p>
-        <a href="#projects" class="cta-button">View My Projects</a>
+
+      <!-- Navigation Arrows -->
+      <button class="arrow arrow-left" onclick="scrollPane(-1)">
+        <img src="Images/left-arrow.png" alt="Scroll Left" />
+      </button>
+      <button class="arrow arrow-right" onclick="scrollPane(1)">
+        <img src="Images/right-arrow.png" alt="Scroll Right" />
+      </button>
+
+      <!-- Position Indicators -->
+      <div class="position-indicators">
+        <span class="dot active" onclick="jumpToPane(0)"></span>
+        <span class="dot" onclick="jumpToPane(1)"></span>
       </div>
     </div>
   </section>
@@ -94,7 +164,7 @@
             <div class="project-header">
               <h3>Crestforge Curse</h3>
               <button class="link-button" onclick="goToLink('https://oddreen.itch.io/slashing-monsters')">
-                <img src="Images/itchio-textless-black.png" alt="Go to Itch.io Demo" />
+                <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
               </button>
             </div>
             <p>- Worked as a Programmer, Game Designer, and Producer.</p>
@@ -112,7 +182,7 @@
               <div class="project-header">
                 <h3>Sushi Cats</h3>
                 <button class="link-button" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">
-                  <img src="Images/itchio-textless-black.png" alt="Go to Itch.io Demo" />
+                  <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
                 </button>
               </div>
               <p>- Worked as a Programmer and Assistant Game Designer.</p>
@@ -197,6 +267,7 @@
           <h3>Unreal Engine 5 C++ Developer</h3>
           <p>Udemy - GameDev.tv</p>
           <p>Current</p>
+          <p>Visit Site Here </p>
           <button class="link-button" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">
             <img src="Images/link-icon.png" alt="Go to Unreal Engine course" />
           </button>
@@ -207,8 +278,8 @@
           </div>
           <h3>Blender Character Creator</h3>
           <p>Udemy - GameDev.tv</p>
-          <p>Udemy</p>
           <p>Current</p>
+          <p>Visit Site Here </p>
           <button class="link-button" onclick="goToLink('https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1')">
             <img src="Images/link-icon.png" alt="Go to Blender Character Creator course" />
           </button>
@@ -229,7 +300,19 @@
       <div class="work-grid">
         <div class="work-item">
           <div class="project-gif">
-            <img src="Images/maxresdefault.jpg" alt="Orc Gif" />
+            <img src="Images/saberwide.png" alt="Orc Gif" />
+          </div>
+          <h3>Internship at Saber Interactive Porto</h3>
+          <p>WIP – Current</p>
+          <p>Helsinki, Finland</p>
+          <p>Click On The PDF To See The Recommendation Letter</p>
+          <button class="link-button" onclick="goToLink('https://saber.games/')">
+            <img src="Images/link-icon.png" alt="Go to Big Ear Games website" />
+          </button>
+        </div>
+        <div class="work-item">
+          <div class="project-gif">
+            <img src="Images/bigear.png" alt="Orc Gif" />
           </div>
           <h3>Internship at Big Ear Games</h3>
           <p>Remote Work</p>
@@ -281,37 +364,30 @@
     <div class="container">
       <h2 class="hover-wave">Contact</h2>
       <div class="contact-info">
-        <div class="contact-item">
+        <a href="tel:+351932707987" class="contact-item">
           <img src="Images/Phone.png" alt="Phone Icon" />
-          <p id="phone">932 707 987</p>
-          <button class="copy-button" onclick="copyToClipboard('phone')">
-            <img src="Images/copy-icon.png" alt="Copy phone number to clipboard" />
-          </button>
-        </div>
-        <div class="contact-item">
+          <p>+351 932 707 987</p>
+        </a>
+        <a href="mailto:leonardovneves2002@gmail.com" class="contact-item">
           <img src="Images/gmail.png" alt="Email Icon" />
-          <p id="email">leonardovneves2002@gmail.com</p>
-          <button class="copy-button" onclick="copyToClipboard('email')">
-            <img src="Images/copy-icon.png" alt="Copy email to clipboard" />
-          </button>
-          <button class="link-button" onclick="goToLink('mailto:leonardovneves2002@gmail.com')">
-            <img src="Images/mail-to-icon.png" alt="Go to email link" />
-          </button>
-        </div>
-        <div class="contact-item">
-          <img src="Images/itchio-textless-black.svg" alt="Portfolio Icon" />
-          <p id="itchio">oddreen.itch.io</p>
-          <button class="link-button" onclick="goToLink('https://oddreen.itch.io/')">
-            <img src="Images/link-icon.png" alt="Go to Itch.io link" />
-          </button>
-        </div>
-        <div class="contact-item">
+          <p>leonardovneves2002@gmail.com</p>
+        </a>
+        <a href="https://www.linkedin.com/in/leonardo-valentim-neves/" class="contact-item" target="_blank">
+          <img src="Images/linkedin.png" alt="LinkedIn Icon" />
+          <p>LinkedIn</p>
+        </a>
+        <a href="https://oddreen.itch.io/" class="contact-item" target="_blank">
+          <img src="Images/itchio-textless-black.svg" alt="Itch.io Icon" />
+          <p>Itch.io</p>
+        </a>
+        <a href="https://www.artstation.com/oddeven" class="contact-item" target="_blank">
           <img src="Images/artstation.png" alt="ArtStation Icon" />
-          <p id="artstation">artstation.com/oddeven</p>
-          <button class="link-button" onclick="goToLink('https://www.artstation.com/oddeven')">
-            <img src="Images/link-icon.png" alt="Go to ArtStation link" />
-          </button>
-        </div>
+          <p>ArtStation</p>
+        </a>
+        <a href="https://x.com/Oddven" class="contact-item" target="_blank">
+          <img src="Images/twitter.png" alt="Twitter Icon" />
+          <p>Twitter</p>
+        </a>
       </div>
     </div>
   </section>

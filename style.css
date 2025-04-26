@@ -23,11 +23,97 @@ body {
   background: #fff;
 }
 
+/* Container */
 .container {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Scrollable Wrapper */
+.scrollable-wrapper {
+  display: flex;
+  overflow-x: hidden; /* Prevent accidental horizontal overflow */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  touch-action: pan-y; /* Allow vertical scrolling */
+}
+
+.scrollable-wrapper:active {
+  cursor: grabbing; /* Change cursor when dragging */
+}
+
+/* Panes */
+.pane {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.pane img, .pane button {
+  pointer-events: none;
+}
+
+/* Navigation Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--cards-color);
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.arrow img {
+  width: 24px;
+  height: 24px;
+}
+
+.arrow:hover {
+  background: var(--accent-color);
+}
+
+/* Position Indicators */
+.position-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--cards-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: var(--accent-color);
 }
 
 /* Header */
@@ -66,6 +152,12 @@ body {
 
 .nav-links a:hover {
   color: var(--accent-color);
+}
+
+.nav-link.active {
+  color: var(--accent-color); /* Highlight color */
+  font-weight: bold; /* Optional: Make it bold */
+  text-decoration: none; /* Remove underline */
 }
 
 /* About Section */
@@ -111,9 +203,10 @@ body {
 
 /* CTA Button */
 .cta-button {
+  border-radius: 4px;
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: var(--accent-color);
+  background: var(--cards-color);
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -122,7 +215,7 @@ body {
 }
 
 .cta-button:hover {
-  background: #e67600;
+  background: var(--accent-color);
   transform: translateY(-3px);
 }
 
@@ -181,6 +274,8 @@ body {
 .project-gif img {
   width: 100%;
   height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
 /* Project Header Styling */
@@ -259,6 +354,7 @@ body {
 }
 
 .education-item {
+  border-radius: 4px;
   background: var(--cards-color);
   padding: 2rem;
   text-align: center;
@@ -293,8 +389,8 @@ body {
 }
 
 .work-item img {
-  width: 100%; /* Set a fixed width */
-  height: 100%; /* Set a fixed height */
+  width: 60%; /* Set a fixed width */
+  height: 60%; /* Set a fixed height */
   object-fit: cover; /* Ensure the image scales properly */
   border-radius: 5px; /* Add slight rounding to the corners */
   margin-bottom: 1rem; /* Add spacing below the image */
@@ -368,6 +464,7 @@ body {
 }
 
 .work-item {
+  border-radius: 4px;
   background: var(--cards-color);
   padding: 2rem;
   text-align: center;
@@ -390,6 +487,56 @@ body {
   color: var(--text-color);
 }
 
+/* Currently On Section */
+.currently-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.currently-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.currently-item {
+  border-radius: 4px;
+  background: var(--cards-color);
+  padding: 2rem;
+  text-align: center;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.currently-item:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.currently-item h3 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.currently-item p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.currently-img img {
+  width: 75%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.saber-container img {
+  width: 50%;
+  height: auto;
+  border-radius: 4px;
+}
+
 /* Contact Section */
 .contact {
   background: var(--primary-color);
@@ -407,42 +554,25 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Contact Item */
 .contact-item {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  overflow: hidden;
+  background: var(--primary-color);
+  color: var(--text-color);
+  text-decoration: none;
   padding: 1rem;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  max-width: 250px;
-  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-/* Contact Info Default State */
-.contact-item p,
-.contact-item a,
-.contact-item .copy-button,
-.contact-item .link-button {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease, color var(--transition-speed);
-  color: var(--text-color); /* Default color */
-}
-
-/* Contact Info Hover State */
-.contact-item:hover p,
-.contact-item:hover a,
-.contact-item:hover .copy-button,
-.contact-item:hover .link-button {
-  opacity: 1;
-  transform: translateY(0);
-  color: var(--accent-color); /* Change to accent color on hover */
-}
-
-/* Contact Item Hover Effect */
 .contact-item:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -451,30 +581,19 @@ body {
 .contact-item img {
   width: 50px;
   height: 50px;
-  filter: invert(1) sepia(0) saturate(1000%) hue-rotate(0deg) brightness(90%); /* Adjust for --text-color */
+  filter: brightness(0) invert(1); /* Ensure the icon contrasts with the text color */
+  margin-bottom: 0.5rem;
 }
 
 .contact-item p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin: 0;
-  color: var(--text-color);
-}
-
-.contact-item a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color var(--transition-speed);
-}
-
-.contact-item a:hover {
-  color: #e67600;
 }
 
 /* Tooltip Styling */
 .copy-tooltip {
   position: absolute;
-  bottom: -30px; /* Position below the button */
+  bottom: -22.5px; /* Position below the button */
   left: 50%;
   transform: translateX(-50%);
   background: var(--accent-color);
@@ -574,6 +693,7 @@ section {
   margin: 0.5rem; /* Add margin around the button */
   display: inline-block;
   position: relative; /* Ensure tooltip or other elements are positioned correctly */
+  pointer-events: auto;
 }
 
 /* PDF Button Styling */
