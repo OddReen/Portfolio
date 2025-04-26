@@ -201,6 +201,44 @@ body {
   margin-left: 1rem; /* Add spacing between the title and the button */
 }
 
+/* Project Tabs */
+.project-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.tab-button {
+  padding: 0.8rem 1.5rem;
+  background: var(--cards-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.tab-button:hover {
+  background: #e67600;
+  color: #fff;
+}
+
+/* Project Categories */
+.project-category {
+  display: none;
+}
+
+.project-category.active {
+  display: block;
+}
+
 /* Education Section */
 .education {
   background: var(--primary-color);
@@ -254,6 +292,21 @@ body {
   color: #e67600;
 }
 
+.work-item img {
+  width: 100%; /* Set a fixed width */
+  height: 100%; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image scales properly */
+  border-radius: 5px; /* Add slight rounding to the corners */
+  margin-bottom: 1rem; /* Add spacing below the image */
+}
+.education-item img {
+  width: 100%; /* Set a fixed width */
+  height: 100%; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image scales properly */
+  border-radius: 5px; /* Add slight rounding to the corners */
+  margin-bottom: 1rem; /* Add spacing below the image */
+}
+
 /* Experience Section */
 .experience {
   background: var(--primary-color);
@@ -292,6 +345,49 @@ body {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   background: #e67600;
+}
+
+/* Work Experience Section */
+.work-experience {
+  background: var(--primary-color);
+  padding: 4rem 0;
+}
+
+.work-experience h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+
+.work-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  gap: 2rem;
+}
+
+.work-item {
+  background: var(--cards-color);
+  padding: 2rem;
+  text-align: center;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.work-item:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.work-item h3 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.work-item p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
 
 /* Contact Section */
@@ -480,6 +576,7 @@ section {
   position: relative; /* Ensure tooltip or other elements are positioned correctly */
 }
 
+/* PDF Button Styling */
 .link-button img {
   width: 24px;
   height: 24px;
@@ -489,9 +586,5 @@ section {
 
 .link-button:hover img {
   transform: scale(1.1); /* Slight zoom effect on hover */
-  filter: brightness(0) saturate(100%) invert(62%) sepia(78%) saturate(5412%) hue-rotate(3deg) brightness(109%) contrast(102%);}
-
-/* Link Button Hover */
-.link-button:hover {
-  border-radius: 5px; /* Optional: Add rounded corners */
+  filter: brightness(0) saturate(100%) invert(62%) sepia(78%) saturate(5412%) hue-rotate(3deg) brightness(109%) contrast(102%);
 }

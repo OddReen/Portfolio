@@ -17,9 +17,10 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#game-projects" class="nav-link">Projects</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#work-experience" class="nav-link">Work Experience</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -35,12 +36,12 @@
       <div class="about-text">
         <h2 class="hover-wave">About Me</h2>
         <p>
-            I'm Leonardo Neves, a dedicated portuguese game developer with a profound enthusiasm for creating innovative
+            I'm Leonardo Neves, a portuguese game developer with a profound enthusiasm for creating innovative
           game mechanics and systems.</p>
           <p>
             Even though I am addicted to programming video games, I also have a background
           and a keen interest in arts, making me a flexible asset for a game development environment.        </p>
-        <a href="#game-projects" class="cta-button">View My Projects</a>
+        <a href="#projects" class="cta-button">View My Projects</a>
       </div>
     </div>
   </section>
@@ -50,47 +51,41 @@
     <div class="divider-line"></div>
   </div>
 
-  <!-- Game Projects Section -->
-  <section id="game-projects" class="projects">
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
     <div class="container">
-      <h2 class="hover-wave">Game Projects</h2>
-      <div class="projects-grid">
-        <!-- Orc Model -->
-        <article class="project-card">
-          <div class="project-gif">
-            <img src="Images/Orc.gif" alt="Orc Gif" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h3>Orc 3D Model - WIP</h3>
-            </div>
-            <p>- Made in Blender</p>
-            <p>- Low Poly Retopology, Down To 3,600 faces</p>
-            <p>- Full Resolution Model With 250,000 faces (The one in the gif)</p>
-            <p>- Baked High Resolution Normals</p>
-          </div>
-        </article>
+      <h2 class="hover-wave">Projects</h2>
+      <!-- Subcategory Tabs -->
+      <div class="project-tabs">
+        <button class="tab-button active" onclick="showCategory('games')">Games</button>
+        <button class="tab-button" onclick="showCategory('models')">3D Models</button>
+        <button class="tab-button" onclick="showCategory('prototypes')">Prototypes</button>
+      </div>
 
-        <!-- Dragon's Spite Project -->
-        <article class="project-card">
-          <div class="project-gif">
-            <img src="Images/dragons-spite.gif" alt="Dragon's Spite Gameplay" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h3>Dragon's Spite</h3>
-              <button class="link-button" onclick="goToLink('https://oddreen.itch.io/dragons-spite')">
-                <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
-              </button>
-            </div>
-            <p>- Worked as a Programmer.</p>
-            <p>- Made third person system with a flying and ground movement.</p>
-            <p>- Made an AI Behavior Tree for villagers.</p>
-            <p>- Made a combo system and a shooting fireballs mechanic.</p>
-          </div>
-        </article>
+      <!-- Games Subcategory -->
+      <div id="games" class="project-category active">
+        <div class="projects-grid">
 
-        <!-- Crestforge Curse Project -->
+          <!-- Dragon's Spite Project -->
+          <article class="project-card">
+            <div class="project-gif">
+              <img src="Images/dragons-spite.gif" alt="Dragon's Spite Gameplay" />
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Dragon's Spite</h3>
+                <button class="link-button" onclick="goToLink('https://oddreen.itch.io/dragons-spite')">
+                  <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
+                </button>
+              </div>
+              <p>- Worked as a Programmer.</p>
+              <p>- Made third person system with a flying and ground movement.</p>
+              <p>- Made an AI Behavior Tree for villagers.</p>
+              <p>- Made a combo system and a shooting fireballs mechanic.</p>
+            </div>
+          </article>
+          <!-- Add more game projects here -->
+            <!-- Crestforge Curse Project -->
         <article class="project-card">
           <div class="project-gif">
             <img src="Images/crestforge-curse.gif" alt="Crestforge Curse Gameplay" />
@@ -108,25 +103,66 @@
             <p>- Made the game design structure with diagrams and visual representations.</p>
           </div>
         </article>
-
-        <!-- Sushi Cats Project -->
-        <article class="project-card">
-          <div class="project-gif">
-            <img src="Images/sushi-cats.gif" alt="Sushi Cats Gameplay" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h3>Sushi Cats</h3>
-              <button class="link-button" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">
-                <img src="Images/itchio-textless-black.png" alt="Go to Itch.io Demo" />
-              </button>
+          <!-- Sushi Cats Project -->
+          <article class="project-card">
+            <div class="project-gif">
+              <img src="Images/sushi-cats.gif" alt="Sushi Cats Gameplay" />
             </div>
-            <p>- Worked as a Programmer and Assistant Game Designer.</p>
-            <p>- Made a 2D clicker with a side-scrolling camera movement.</p>
-            <p>- Made a recipe check with an inventory system.</p>
-            <p>- Made 4 timing minigames.</p>
-          </div>
-        </article>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Sushi Cats</h3>
+                <button class="link-button" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">
+                  <img src="Images/itchio-textless-black.png" alt="Go to Itch.io Demo" />
+                </button>
+              </div>
+              <p>- Worked as a Programmer and Assistant Game Designer.</p>
+              <p>- Made a 2D clicker with a side-scrolling camera movement.</p>
+              <p>- Made a recipe check with an inventory system.</p>
+              <p>- Made 4 timing minigames.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 3D Models Subcategory -->
+      <div id="models" class="project-category">
+        <div class="projects-grid">
+          <!-- Orc Model -->
+          <article class="project-card">
+            <div class="project-gif">
+              <img src="Images/Orc.gif" alt="Orc Gif" />
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Orc 3D Model - WIP</h3>
+              </div>
+              <p>- Made in Blender</p>
+              <p>- Low Poly Retopology, Down To 3,600 faces</p>
+              <p>- Full Resolution Model With 250,000 faces (The one in the gif)</p>
+              <p>- Baked High Resolution Normals</p>
+            </div>
+          </article>
+          <!-- Add more 3D models here -->
+        </div>
+      </div>
+
+      <!-- Prototypes Subcategory -->
+      <div id="prototypes" class="project-category">
+        <div class="projects-grid">
+
+          <!-- Add prototype projects here -->
+          <article class="project-card">
+            <div class="project-gif">
+              <img src="Images/WIP.gif" alt="WIP" />
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>WIP</h3>
+              </div>
+              <p>- WIP</p>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -142,23 +178,71 @@
       <h2 class="hover-wave">Education</h2>
       <div class="education-grid">
         <div class="education-item">
+          <div class="project-gif">
+            <img src="Images/licenciatura-videojogos-apps-multi-porto_628.jpg" alt="Orc Gif" />
+          </div>
           <h3>Licenciatura em Videojogos e Aplicações Multimédia</h3>
           <p>Universidade Lusófona do Porto</p>
           <p>3 Oct 2021 – 5 Jul 2024</p>
           <p>Porto, Portugal</p>
-          <a href="https://www.ulusofona.pt" target="_blank">Visit Website</a>
+          <p>Visit Site Here </p>
+          <button class="link-button" onclick="goToLink('https://www.ulusofona.pt')">
+            <img src="Images/link-icon.png" alt="Go to Universidade Lusófona website" />
+          </button>
         </div>
         <div class="education-item">
+          <div class="project-gif">
+            <img src="Images/UnrealC.webp" alt="Orc Gif" />
+          </div>
           <h3>Unreal Engine 5 C++ Developer</h3>
-          <p>Udemy</p>
+          <p>Udemy - GameDev.tv</p>
           <p>Current</p>
-          <a href="https://www.udemy.com/course/unrealcourse/" target="_blank">Visit Course</a>
+          <button class="link-button" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">
+            <img src="Images/link-icon.png" alt="Go to Unreal Engine course" />
+          </button>
         </div>
         <div class="education-item">
+          <div class="project-gif">
+            <img src="Images/BlenderCharacterCreator.webp" alt="Orc Gif" />
+          </div>
           <h3>Blender Character Creator</h3>
+          <p>Udemy - GameDev.tv</p>
           <p>Udemy</p>
           <p>Current</p>
-          <a href="https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1" target="_blank">Visit Course</a>
+          <button class="link-button" onclick="goToLink('https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1')">
+            <img src="Images/link-icon.png" alt="Go to Blender Character Creator course" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Work Experience Section -->
+  <section id="work-experience" class="work-experience">
+    <div class="container">
+      <h2 class="hover-wave">Work Experience</h2>
+      <div class="work-grid">
+        <div class="work-item">
+          <div class="project-gif">
+            <img src="Images/maxresdefault.jpg" alt="Orc Gif" />
+          </div>
+          <h3>Internship at Big Ear Games</h3>
+          <p>Remote Work</p>
+          <p>Colaborated as a Game Designer, Character Animator and Programmer</p>
+          <p>3 Apr 2024 – 26 Jul 2024</p>
+          <p>Helsinki, Finland</p>
+          <p>Click On The PDF To See The Recommendation Letter</p>
+          <button class="link-button" onclick="goToLink('https://bigeargames.com')">
+            <img src="Images/link-icon.png" alt="Go to Big Ear Games website" />
+          </button>
+          <button class="link-button" onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">
+            <img src="Images/pdf-icon.png" alt="View Recommendation Letter" />
+          </button>
         </div>
       </div>
     </div>
@@ -172,7 +256,7 @@
   <!-- Experience Section -->
   <section id="experience" class="experience">
     <div class="container">
-      <h2 class="hover-wave">Experience</h2>
+      <h2 class="hover-wave">Software Experience</h2>
       <ul class="experience-list">
         <li>C++</li>
         <li>C#</li>

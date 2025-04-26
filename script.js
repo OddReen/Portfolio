@@ -29,3 +29,21 @@ document.querySelectorAll('.copy-button').forEach(button => {
 function goToLink(url) {
   window.open(url, '_blank'); // Opens the link in a new tab
 }
+
+function showCategory(categoryId) {
+  // Hide all categories
+  document.querySelectorAll('.project-category').forEach(category => {
+    category.classList.remove('active');
+  });
+
+  // Remove active class from all buttons
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  // Show the selected category
+  document.getElementById(categoryId).classList.add('active');
+
+  // Highlight the corresponding button
+  document.querySelector(`.tab-button[onclick="showCategory('${categoryId}')"]`).classList.add('active');
+}
