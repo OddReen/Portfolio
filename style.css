@@ -163,7 +163,7 @@ body {
 /* About Section */
 .about {
   background: var(--primary-color);
-  padding: 5rem 2rem;
+  padding: 0rem 0rem;
 }
 
 .about-container {
@@ -578,6 +578,11 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+.contact-item:hover img {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(53%) saturate(6343%) hue-rotate(1deg) brightness(101%) contrast(107%);
+  transform: scale(1.1); /* Slightly enlarge the icon */
+}
+
 .contact-item img {
   width: 50px;
   height: 50px;
@@ -588,6 +593,28 @@ body {
 .contact-item p {
   font-size: 1rem;
   margin: 0;
+}
+
+/* Contact Button Click Animation */
+.contact-item:active {
+  transform: scale(0.95); /* Slightly shrink the button on click */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjust shadow on click */
+}
+
+.contact-item.clicked {
+  animation: clickEffect 0.1s ease-out; /* Trigger the click animation */
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(0.9); /* Shrink slightly */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
 }
 
 /* Tooltip Styling */
