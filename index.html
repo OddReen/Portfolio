@@ -15,6 +15,7 @@
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-container">
+      
       <h1 class="logo">Leonardo Neves</h1>
       <nav>
         <ul class="nav-links">
@@ -34,7 +35,7 @@
     <div class="container">
       <div class="scrollable-wrapper">
         <!-- About Me Pane -->
-        <div class="pane" id="about-pane">
+        <div class="pane about-pane active">
           <div class="about-container">
             <div class="about-image">
               <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
@@ -53,73 +54,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Currently On Pane -->
-        <div class="pane" id="currently-on-pane">
-          <div class="currently-container">
-            <h2 class="hover-wave">Currently On</h2>
-            <div class="currently-grid">
-              <div class="currently-item">
-                  <div class="currently-img">
-                    <img src="Images/saberwide.png" alt="Internship at Saber Interactive Porto" />
-                  </div>
-                <h3>Internship at Saber Interactive Porto</h3>
-                <p>28 Apr 2025 – Current</p>
-                <p>Porto, Portugal</p>
-                <p>Visit Site Here</p>
-                <button class="link-button" onclick="goToLink('https://saber.games/')">
-                  <img src="Images/link-icon.png" alt="Go to Saber Interactive website" />
-                </button>
-              </div>
-              <div class="currently-item">
-                <div class="currently-img">
-                  <img src="Images/UnrealC.webp" alt="Unreal Engine 5 C++ Developer" />
-                </div>
-                <h3>Unreal Engine 5 C++ Developer</h3>
-                <p>Udemy - GameDev.tv</p>
-                <p>Current</p>
-                <p>Visit Site Here</p>
-                <button class="link-button" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">
-                  <img src="Images/link-icon.png" alt="Go to Unreal Engine course" />
-                </button>
-              </div>
-              <div class="currently-item">
-                <div class="currently-img">
-                  <img src="Images/BlenderCharacterCreator.webp" alt="Blender Character Creator" />
-                </div>
-                <h3>Blender Character Creator</h3>
-                <p>Udemy - GameDev.tv</p>
-                <p>Current</p>
-                <p>Visit Site Here</p>
-                <button class="link-button" onclick="goToLink('https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1')">
-                  <img src="Images/link-icon.png" alt="Go to Blender Character Creator course" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Navigation Arrows -->
-      <button class="arrow arrow-left" onclick="scrollPane(-1)">
-        <img src="Images/left-arrow.png" alt="Scroll Left" />
-      </button>
-      <button class="arrow arrow-right" onclick="scrollPane(1)">
-        <img src="Images/right-arrow.png" alt="Scroll Right" />
-      </button>
-
-      <!-- Position Indicators -->
-      <div class="position-indicators">
-        <span class="dot active" onclick="jumpToPane(0)"></span>
-        <span class="dot" onclick="jumpToPane(1)"></span>
+        <!-- Removed the Currently On Pane -->
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="divider">
-    <div class="divider-line"></div>
-  </div>
 
   <!-- Projects Section -->
   <section id="projects" class="projects">
@@ -148,13 +86,13 @@
                   <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
                 </button>
               </div>
-              <p>- Worked as a Programmer.</p>
-              <p>- Made third person system with a flying and ground movement.</p>
-              <p>- Made an AI Behavior Tree for villagers.</p>
-              <p>- Made a combo system and a shooting fireballs mechanic.</p>
+              <p>Programmer</p>
+              <p>- Built third-person character system with flying and ground movement.</p>
+              <p>- Created AI behavior tree for NPC villagers.</p>
+              <p>- Implemented combat mechanics: combo system and fireball shooting.</p>
             </div>
           </article>
-          <!-- Add more game projects here -->
+          
             <!-- Crestforge Curse Project -->
         <article class="project-card">
           <div class="project-gif">
@@ -167,12 +105,13 @@
                 <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
               </button>
             </div>
-            <p>- Worked as a Programmer, Game Designer, and Producer.</p>
-            <p>- Made the main feature which is to grab the enemies and use them as weapons.</p>
-            <p>- Made a chronological task list for keeping track of the project.</p>
-            <p>- Made the game design structure with diagrams and visual representations.</p>
+            <p>Programmer, Game Designer & Producer</p>
+            <p>- Designed core mechanic: grab enemies and use them as weapons.</p>
+            <p>- Managed development with chronological task tracking.</p>
+            <p>- Created structured game design with visual diagrams.</p>
           </div>
         </article>
+
           <!-- Sushi Cats Project -->
           <article class="project-card">
             <div class="project-gif">
@@ -185,7 +124,7 @@
                   <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
                 </button>
               </div>
-              <p>- Worked as a Programmer and Assistant Game Designer.</p>
+              <p>Programmer & Assistant Game Designer</p>
               <p>- Made a 2D clicker with a side-scrolling camera movement.</p>
               <p>- Made a recipe check with an inventory system.</p>
               <p>- Made 4 timing minigames.</p>
@@ -237,11 +176,6 @@
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="divider">
-    <div class="divider-line"></div>
-  </div>
-
   <!-- Education Section -->
   <section id="education" class="education">
     <div class="container">
@@ -255,7 +189,6 @@
           <p>Universidade Lusófona do Porto</p>
           <p>3 Oct 2021 – 5 Jul 2024</p>
           <p>Porto, Portugal</p>
-          <p>Visit Site Here </p>
           <button class="link-button" onclick="goToLink('https://www.ulusofona.pt')">
             <img src="Images/link-icon.png" alt="Go to Universidade Lusófona website" />
           </button>
@@ -267,7 +200,6 @@
           <h3>Unreal Engine 5 C++ Developer</h3>
           <p>Udemy - GameDev.tv</p>
           <p>Current</p>
-          <p>Visit Site Here </p>
           <button class="link-button" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">
             <img src="Images/link-icon.png" alt="Go to Unreal Engine course" />
           </button>
@@ -279,7 +211,6 @@
           <h3>Blender Character Creator</h3>
           <p>Udemy - GameDev.tv</p>
           <p>Current</p>
-          <p>Visit Site Here </p>
           <button class="link-button" onclick="goToLink('https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1')">
             <img src="Images/link-icon.png" alt="Go to Blender Character Creator course" />
           </button>
@@ -287,11 +218,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="divider">
-    <div class="divider-line"></div>
-  </div>
 
   <!-- Work Experience Section -->
   <section id="work-experience" class="work-experience">
@@ -303,7 +229,7 @@
             <img src="Images/saberwide.png" alt="Orc Gif" />
           </div>
           <h3>Internship at Saber Interactive Porto</h3>
-          <p>📅WIP – Current</p>
+          <p>📅August 2025 – Current</p>
           <p>📍Porto, Portugal</p>
           <button class="link-button" onclick="goToLink('https://saber.games/')">
             <img src="Images/link-icon.png" alt="Go to Big Ear Games website" />
@@ -316,7 +242,7 @@
           <h3>Internship at Big Ear Games</h3>
           <p>💻 Remote Work</p>
           <p>🛠️ Roles: Game Designer, Character Animator, Programmer</p>
-          <p>📅3 Apr 2024 – 26 Jul 2024</p>
+          <p>📅Apr 2024 – July 2024</p>
           <p>📍Helsinki, Finland</p>
           <p>📄Recommendation Letter Bellow</p>
           <button class="link-button" onclick="goToLink('https://bigeargames.com')">
@@ -329,11 +255,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="divider">
-    <div class="divider-line"></div>
-  </div>
 
   <!-- Experience Section -->
   <section id="experience" class="experience">
@@ -352,11 +273,6 @@
       </ul>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="divider">
-    <div class="divider-line"></div>
-  </div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -384,11 +300,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="divider">
-    <div class="divider-line"></div>
-  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
