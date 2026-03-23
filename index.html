@@ -1,176 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Neves | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Favicon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="icon" href="Images/Eu.jpg" type="image/jpeg" />
 </head>
+
 <body>
-  <!-- Header / Navigation -->
+
+  <div class="scanlines"></div>
+  <div class="crt-vignette"></div>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="container header-container">
-      
-      <h1 class="logo">Leonardo Neves</h1>
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="blink-cursor">▶</span> Leonardo Neves
+      </div>
       <nav>
         <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About me</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#work-experience" class="nav-link">Work Experience</a></li>
-          <li><a href="#experience" class="nav-link">Software Experience</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#about" class="nav-link">[ ABOUT ]</a></li>
+          <li><a href="#projects" class="nav-link">[ PROJECTS ]</a></li>
+          <li><a href="#education" class="nav-link">[ EDUCATION ]</a></li>
+          <li><a href="#work-experience" class="nav-link">[ WORK ]</a></li>
+          <li><a href="#experience" class="nav-link">[ SKILLS ]</a></li>
+          <li><a href="#contact" class="nav-link">[ CONTACT ]</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- HERO / About -->
   <section id="about" class="about">
     <div class="container">
-      <div class="scrollable-wrapper">
-        <!-- About Me Pane -->
-        <div class="pane about-pane active">
-          <div class="about-container">
-            <div class="about-image">
-              <img src="Images/Eu.jpg" alt="Leonardo Valentim Neves" />
+      <div class="hero-grid">
+
+        <div class="hero-left">
+          <div class="sprite-frame">
+            <div class="sprite-scanlines"></div>
+            <img src="Images/Eu2.png" alt="Leonardo Valentim Neves" class="sprite-img" />
+            <div class="sprite-corner tl"></div>
+            <div class="sprite-corner tr"></div>
+            <div class="sprite-corner bl"></div>
+            <div class="sprite-corner br"></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-row">
+              <span class="stat-label">LOCATION</span>
+              <span class="stat-val accent-text" style="font-size:0.48rem">PORTO, PORTUGAL</span>
             </div>
-            <div class="about-text">
-              <h2 class="hover-wave">About Me</h2>
-              <p>
-                Hi!
-              </p>
-              <p>
-                I am Leonardo Neves, a portuguese game developer!
-              </p>
-              <p>
-                I'm addicted to programming video games, but I also have a background
-                in arts.
-              </p>
-              <a href="#projects" class="cta-button">View My Projects</a>
+            <div class="stat-row">
+              <span class="stat-label">OCCUPATION</span>
+              <span class="stat-val accent-text" style="font-size:0.48rem">GAME DEVELOPER</span>
             </div>
           </div>
         </div>
-        <!-- Removed the Currently On Pane -->
+
+        <div class="hero-right">
+          <div class="dialogue-box">
+            <div class="dialogue-header">
+              <span class="dialogue-name">LEONARDO NEVES</span>
+              <span class="dialogue-role">GAME PROGRAMMER</span>
+            </div>
+          </div>
+
+          <div class="hero-desc">
+            <p>
+              Game developer specializing in <span class="accent-text">gameplay &amp; systems programming</span>,
+              focused on scalable and efficient game mechanics.
+            </p>
+            <p>
+              Recently gained AAA experience at <span class="accent-text">Saber Interactive Porto</span>.
+            </p>
+            <p>
+              Always learning new tech and pushing every project further.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="pixel-button primary">▶ VIEW PROJECTS</a>
+            <a href="#contact" class="pixel-button secondary">✉ CONTACT ME</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="hover-wave">Projects</h2>
-      <!-- Subcategory Tabs -->
-      <div class="project-tabs">
-        <button class="tab-button active" onclick="showCategory('games')">Games</button>
-        <button class="tab-button" onclick="showCategory('models')">3D Models</button>
-        <button class="tab-button" onclick="showCategory('prototypes')">Prototypes</button>
+      <div class="section-header">
+        <h2 class="sh-title">PROJECTS</h2>
+        <div class="sh-line"></div>
       </div>
 
-      <!-- Games Subcategory -->
+      <div class="project-tabs">
+        <button class="tab-button active" onclick="showCategory('games', this)">▶ GAMES</button>
+        <button class="tab-button" onclick="showCategory('models', this)">▶ 3D MODELS</button>
+        <button class="tab-button" onclick="showCategory('prototypes', this)">▶ PROTOTYPES</button>
+      </div>
+
       <div id="games" class="project-category active">
         <div class="projects-grid">
 
-          <!-- Dragon's Spite Project -->
-          <article class="project-card">
-            <div class="project-gif">
-              <img src="Images/dragons-spite.gif" alt="Dragon's Spite Gameplay" />
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
+              <img src="Images/RoadKings.gif" alt="Road Kings" />
+              <div class="card-screen-overlay">
+                <button class="screen-btn" onclick="goToLink('https://store.steampowered.com/app/2141130/Road_Kings/')">PLAY ▶</button>
+              </div>
+              <div class="card-screen-badge">STEAM</div>
             </div>
-            <div class="project-info">
-              <div class="project-header">
-                <h3>Dragon's Spite</h3>
-                <button class="link-button" onclick="goToLink('https://oddreen.itch.io/dragons-spite')">
-                  <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3>ROAD KINGS</h3>
+                <button class="card-icon-btn" onclick="goToLink('https://store.steampowered.com/app/2141130/Road_Kings/')">
+                  <img src="Images/steam-1.svg" alt="Steam" />
                 </button>
               </div>
-              <p>Programmer</p>
-              <p>- Built third-person character system with flying and ground movement.</p>
-              <p>- Created AI behavior tree for NPC villagers.</p>
-              <p>- Implemented combat mechanics: combo system and fireball shooting.</p>
+              <p class="card-role">[ PROGRAMMER ]</p>
             </div>
           </article>
-          
-            <!-- Crestforge Curse Project -->
-        <article class="project-card">
-          <div class="project-gif">
-            <img src="Images/crestforge-curse.gif" alt="Crestforge Curse Gameplay" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h3>Crestforge Curse</h3>
-              <button class="link-button" onclick="goToLink('https://oddreen.itch.io/slashing-monsters')">
-                <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
-              </button>
-            </div>
-            <p>Programmer, Game Designer & Producer</p>
-            <p>- Designed core mechanic: grab enemies and use them as weapons.</p>
-            <p>- Managed development with chronological task tracking.</p>
-            <p>- Created structured game design with visual diagrams.</p>
-          </div>
-        </article>
 
-          <!-- Sushi Cats Project -->
-          <article class="project-card">
-            <div class="project-gif">
-              <img src="Images/sushi-cats.gif" alt="Sushi Cats Gameplay" />
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
+              <img src="Images/bigear.gif" alt="Big Ear" />
+              <div class="card-screen-overlay">
+                <button class="screen-btn" onclick="goToLink('https://www.bigeargames.com/')">VIEW ▶</button>
+              </div>
+              <div class="card-screen-badge">WEB</div>
             </div>
-            <div class="project-info">
-              <div class="project-header">
-                <h3>Sushi Cats</h3>
-                <button class="link-button" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">
-                  <img src="Images/itchio-textless-black.svg" alt="Go to Itch.io Demo" />
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3>BIG EAR</h3>
+                <button class="card-icon-btn" onclick="goToLink('https://www.bigeargames.com/')">
+                  <img src="Images/siteIcon.svg" alt="Site" />
                 </button>
               </div>
-              <p>Programmer & Assistant Game Designer</p>
-              <p>- Made a 2D clicker with a side-scrolling camera movement.</p>
-              <p>- Made a recipe check with an inventory system.</p>
-              <p>- Made 4 timing minigames.</p>
+              <p class="card-role">[ PROGRAMMER ]</p>
             </div>
           </article>
+
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
+              <img src="Images/dragons-spite.gif" alt="Dragon's Spite" />
+              <div class="card-screen-overlay">
+                <button class="screen-btn" onclick="goToLink('https://oddreen.itch.io/dragons-spite')">PLAY ▶</button>
+              </div>
+              <div class="card-screen-badge">ITCH.IO</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3>DRAGON'S SPITE</h3>
+                <button class="card-icon-btn" onclick="goToLink('https://oddreen.itch.io/dragons-spite')">
+                  <img src="Images/itchio-textless-black.svg" alt="Itch.io" />
+                </button>
+              </div>
+              <p class="card-role">[ PROGRAMMER ]</p>
+              <ul class="card-bullets">
+                <li>▸ 3rd-person system w/ flying &amp; ground movement</li>
+                <li>▸ AI behavior tree for NPC villagers</li>
+                <li>▸ Combo system &amp; fireball combat</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
+              <img src="Images/crestforge-curse.gif" alt="Crestforge Curse" />
+              <div class="card-screen-overlay">
+                <button class="screen-btn" onclick="goToLink('https://oddreen.itch.io/slashing-monsters')">PLAY ▶</button>
+              </div>
+              <div class="card-screen-badge">ITCH.IO</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3>CRESTFORGE CURSE</h3>
+                <button class="card-icon-btn" onclick="goToLink('https://oddreen.itch.io/slashing-monsters')">
+                  <img src="Images/itchio-textless-black.svg" alt="Itch.io" />
+                </button>
+              </div>
+              <p class="card-role">[ PROGRAMMER · DESIGNER · PRODUCER ]</p>
+              <ul class="card-bullets">
+                <li>▸ Core mechanic: grab enemies, use as weapons</li>
+                <li>▸ Managed w/ chronological task tracking</li>
+                <li>▸ Structured GDD with visual diagrams</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
+              <img src="Images/sushi-cats.gif" alt="Sushi Cats" />
+              <div class="card-screen-overlay">
+                <button class="screen-btn" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">PLAY ▶</button>
+              </div>
+              <div class="card-screen-badge">ITCH.IO</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3>SUSHI CATS</h3>
+                <button class="card-icon-btn" onclick="goToLink('https://oddreen.itch.io/sushi-cats')">
+                  <img src="Images/itchio-textless-black.svg" alt="Itch.io" />
+                </button>
+              </div>
+              <p class="card-role">[ PROGRAMMER · ASST. DESIGNER ]</p>
+              <ul class="card-bullets">
+                <li>▸ 2D clicker w/ side-scrolling camera</li>
+                <li>▸ Recipe check &amp; inventory system</li>
+                <li>▸ 4 timing minigames</li>
+              </ul>
+            </div>
+          </article>
+
         </div>
       </div>
 
-      <!-- 3D Models Subcategory -->
       <div id="models" class="project-category">
         <div class="projects-grid">
-          <!-- Orc Model -->
-          <article class="project-card">
-            <div class="project-gif">
-              <img src="Images/Orc.gif" alt="Orc Gif" />
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
+              <img src="Images/Orc.gif" alt="Orc Model" />
+              <div class="card-screen-badge">BLENDER</div>
             </div>
-            <div class="project-info">
-              <div class="project-header">
-                <h3>Orc 3D Model - WIP</h3>
-              </div>
-              <p>- Made in Blender</p>
-              <p>- Low Poly Retopology, Down To 3,600 faces</p>
-              <p>- Full Resolution Model With 250,000 faces (The one in the gif)</p>
-              <p>- Baked High Resolution Normals</p>
+            <div class="card-body">
+              <div class="card-title-row"><h3>ORC 3D MODEL — WIP</h3></div>
+              <ul class="card-bullets">
+                <li>▸ Low poly retopology — 3,600 faces</li>
+                <li>▸ Full-res model — 250,000 faces</li>
+                <li>▸ Baked high-res normals</li>
+              </ul>
             </div>
           </article>
-          <!-- Add more 3D models here -->
         </div>
       </div>
 
-      <!-- Prototypes Subcategory -->
       <div id="prototypes" class="project-category">
         <div class="projects-grid">
-
-          <!-- Add prototype projects here -->
-          <article class="project-card">
-            <div class="project-gif">
+          <article class="project-card" data-reveal>
+            <div class="card-screen">
               <img src="Images/WIP.gif" alt="WIP" />
+              <div class="card-screen-badge">WIP</div>
             </div>
-            <div class="project-info">
-              <div class="project-header">
-                <h3>WIP</h3>
-              </div>
-              <p>- WIP</p>
+            <div class="card-body">
+              <div class="card-title-row"><h3>COMING SOON...</h3></div>
+              <ul class="card-bullets"><li>▸ Loading...</li></ul>
             </div>
           </article>
         </div>
@@ -178,140 +260,195 @@
     </div>
   </section>
 
-  <!-- Education Section -->
+  <!-- Education -->
   <section id="education" class="education">
     <div class="container">
-      <h2 class="hover-wave">Education</h2>
+      <div class="section-header">
+        <h2 class="sh-title">EDUCATION</h2>
+        <div class="sh-line"></div>
+      </div>
       <div class="education-grid">
-
-        <div class="education-item">
-          <div class="project-gif">
-            <img src="Images/licenciatura-videojogos-apps-multi-porto_628.jpg" alt="Orc Gif" />
+        <div class="edu-card" data-reveal>
+          <div class="edu-img"><img src="Images/licenciatura-videojogos-apps-multi-porto_628.jpg" alt="Lusófona" /></div>
+          <div class="edu-body">
+            <div class="edu-badge">DEGREE</div>
+            <h3>Videojogos e Aplicações Multimédia</h3>
+            <p class="edu-org">Universidade Lusófona do Porto</p>
+            <p class="edu-date">OCT 2021 – JUL 2024 · PORTO</p>
+            <button class="pixel-link" onclick="goToLink('https://www.ulusofona.pt')">VISIT ▶</button>
           </div>
-          <h3>Licenciatura em Videojogos e Aplicações Multimédia</h3>
-          <p>Universidade Lusófona do Porto</p>
-          <p>3 Oct 2021 – 5 Jul 2024</p>
-          <p>Porto, Portugal</p>
-          <button class="link-button" onclick="goToLink('https://www.ulusofona.pt')">
-            <img src="Images/link-icon.png" alt="Go to Universidade Lusófona website" />
-          </button>
         </div>
-
-        <div class="education-item">
-          <div class="project-gif">
-            <img src="Images/UnrealC.webp" alt="Orc Gif" />
+        <div class="edu-card" data-reveal>
+          <div class="edu-img"><img src="Images/UnrealC.webp" alt="Unreal" /></div>
+          <div class="edu-body">
+            <div class="edu-badge">COURSE</div>
+            <h3>Unreal Engine 5 C++ Developer</h3>
+            <p class="edu-org">Udemy – GameDev.tv</p>
+            <p class="edu-date">IN PROGRESS</p>
+            <button class="pixel-link" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">VISIT ▶</button>
           </div>
-          <h3>Unreal Engine 5 C++ Developer</h3>
-          <p>Udemy - GameDev.tv</p>
-          <p>Current</p>
-          <button class="link-button" onclick="goToLink('https://www.udemy.com/course/unrealcourse/')">
-            <img src="Images/link-icon.png" alt="Go to Unreal Engine course" />
-          </button>
         </div>
-
-        <div class="education-item">
-          <div class="project-gif">
-            <img src="Images/BlenderCharacterCreator.webp" alt="Orc Gif" />
+        <div class="edu-card" data-reveal>
+          <div class="edu-img"><img src="Images/BlenderCharacterCreator.webp" alt="Blender" /></div>
+          <div class="edu-body">
+            <div class="edu-badge">COURSE</div>
+            <h3>Blender Character Creator</h3>
+            <p class="edu-org">Udemy – GameDev.tv</p>
+            <p class="edu-date">IN PROGRESS</p>
+            <button class="pixel-link" onclick="goToLink('https://www.udemy.com/course/blendercharacters/')">VISIT ▶</button>
           </div>
-          <h3>Blender Character Creator</h3>
-          <p>Udemy - GameDev.tv</p>
-          <p>Current</p>
-          <button class="link-button" onclick="goToLink('https://www.udemy.com/course/blendercharacters/?couponCode=ST22MT240325G1')">
-            <img src="Images/link-icon.png" alt="Go to Blender Character Creator course" />
-          </button>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Work Experience Section -->
+  <!-- Work Experience -->
   <section id="work-experience" class="work-experience">
     <div class="container">
-      <h2 class="hover-wave">Work Experience</h2>
+      <div class="section-header">
+        <h2 class="sh-title">WORK EXPERIENCE</h2>
+        <div class="sh-line"></div>
+      </div>
       <div class="work-grid">
-        <div class="work-item">
-          <div class="project-gif">
-            <img src="Images/saberwide.png" alt="Orc Gif" />
+        <div class="work-card" data-reveal>
+          <div class="work-img"><img src="Images/saberwide.png" alt="Saber Interactive" /></div>
+          <div class="work-body">
+            <div class="work-status active-status">● ACTIVE</div>
+            <h3>SABER INTERACTIVE PORTO</h3>
+            <p class="work-role">PROGRAMMER INTERNSHIP</p>
+            <p class="work-meta">AUG 2025 – PRESENT · PORTO, PT</p>
+            <button class="pixel-link" onclick="goToLink('https://saber.games/')">VISIT ▶</button>
           </div>
-          <h3>Internship at Saber Interactive Porto</h3>
-          <p>📅August 2025 – Current</p>
-          <p>📍Porto, Portugal</p>
-          <button class="link-button" onclick="goToLink('https://saber.games/')">
-            <img src="Images/link-icon.png" alt="Go to Big Ear Games website" />
-          </button>
         </div>
-        <div class="work-item">
-          <div class="project-gif">
-            <img src="Images/bigear.png" alt="Orc Gif" />
+        <div class="work-card" data-reveal>
+          <div class="work-img"><img src="Images/bigear.png" alt="Big Ear Games" /></div>
+          <div class="work-body">
+            <div class="work-status">● COMPLETED</div>
+            <h3>BIG EAR GAMES</h3>
+            <p class="work-role">DESIGNER · ANIMATOR · PROGRAMMER</p>
+            <p class="work-meta">APR – JUL 2024 · HELSINKI, FI (REMOTE)</p>
+            <div class="work-links">
+              <button class="pixel-link" onclick="goToLink('https://bigeargames.com')">VISIT ▶</button>
+              <button class="pixel-link" onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">LETTER ↓</button>
+            </div>
           </div>
-          <h3>Internship at Big Ear Games</h3>
-          <p>💻 Remote Work</p>
-          <p>🛠️ Roles: Game Designer, Character Animator, Programmer</p>
-          <p>📅Apr 2024 – July 2024</p>
-          <p>📍Helsinki, Finland</p>
-          <p>📄Recommendation Letter Bellow</p>
-          <button class="link-button" onclick="goToLink('https://bigeargames.com')">
-            <img src="Images/link-icon.png" alt="Go to Big Ear Games website" />
-          </button>
-          <button class="link-button" onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">
-            <img src="Images/pdf-icon.png" alt="View Recommendation Letter" />
-          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Skills -->
   <section id="experience" class="experience">
     <div class="container">
-      <h2 class="hover-wave">Software Experience</h2>
-      <ul class="experience-list">
-        <li>C++</li>
-        <li>C#</li>
-        <li>Blender</li>
-        <li>Unreal Engine</li>
-        <li>Unity</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Git</li>
+      <div class="section-header">
+        <h2 class="sh-title">SKILLS</h2>
+        <div class="sh-line"></div>
+      </div>
+      <ul class="skills-list">
+        <li data-reveal>C++</li>
+        <li data-reveal>C#</li>
+        <li data-reveal>BLENDER</li>
+        <li data-reveal>UNREAL ENGINE</li>
+        <li data-reveal>UNITY</li>
+        <li data-reveal>HTML</li>
+        <li data-reveal>CSS</li>
+        <li data-reveal>JAVASCRIPT</li>
+        <li data-reveal>GIT</li>
       </ul>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="hover-wave">Contact</h2>
-      <div class="contact-info">
-        <a href="tel:+351932707987" class="contact-item">
-          <img src="Images/Phone.png" alt="Phone Icon" />
-        </a>
-        <a href="mailto:leonardovneves2002@gmail.com" class="contact-item">
-          <img src="Images/gmail.png" alt="Email Icon" />
-        </a>
-        <a href="https://www.linkedin.com/in/leonardo-valentim-neves/" class="contact-item" target="_blank">
-          <img src="Images/linkedin.png" alt="LinkedIn Icon" />
-        </a>
-        <a href="https://oddreen.itch.io/" class="contact-item" target="_blank">
-          <img src="Images/itchio-textless-black.svg" alt="Itch.io Icon" />
-        </a>
-        <a href="https://www.artstation.com/oddeven" class="contact-item" target="_blank">
-          <img src="Images/artstation.png" alt="ArtStation Icon" />
-        </a>
-        <a href="https://x.com/Oddven" class="contact-item" target="_blank">
-          <img src="Images/twitter.png" alt="Twitter Icon" />
-        </a>
+      <div class="section-header">
+        <h2 class="sh-title">CONTACT</h2>
+        <div class="sh-line"></div>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+351932707987" class="contact-card"><img src="Images/Phone.png" alt="Phone" /><span>PHONE</span></a>
+        <a href="mailto:leonardovneves2002@gmail.com" class="contact-card"><img src="Images/gmail.png" alt="Email" /><span>EMAIL</span></a>
+        <a href="https://www.linkedin.com/in/leonardo-valentim-neves/" class="contact-card" target="_blank"><img src="Images/linkedin.png" alt="LinkedIn" /><span>LINKEDIN</span></a>
+        <a href="https://oddreen.itch.io/" class="contact-card" target="_blank"><img src="Images/itchio-textless-black.svg" alt="Itch.io" /><span>ITCH.IO</span></a>
+        <a href="https://www.artstation.com/oddeven" class="contact-card" target="_blank"><img src="Images/artstation.png" alt="ArtStation" /><span>ARTSTATION</span></a>
+        <a href="https://x.com/Oddven" class="contact-card" target="_blank"><img src="Images/twitter.png" alt="Twitter" /><span>TWITTER</span></a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Leonardo Neves. All rights reserved.</p>
+    <div class="container footer-inner">
+      <span class="footer-logo"><span class="blink-cursor">▶</span> Leonardo Neves</span>
+      <span>© 2025 LEONARDO NEVES</span>
+      <a href="#about" class="footer-back">▲ CONTINUE?</a>
     </div>
   </footer>
+
+  <script>
+    function showCategory(cat, btn) {
+      document.querySelectorAll('.project-category').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      document.getElementById(cat).classList.add('active');
+      btn.classList.add('active');
+      document.querySelectorAll('#' + cat + ' [data-reveal]').forEach((el, i) => {
+        el.classList.remove('revealed');
+        void el.offsetWidth;
+        setTimeout(() => el.classList.add('revealed'), i * 80);
+      });
+    }
+
+    function goToLink(url) { window.open(url, '_blank'); }
+
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+
+    // Stagger skills
+    document.querySelectorAll('.skills-list li').forEach((li, i) => {
+      li.style.transitionDelay = (i * 0.06) + 's';
+    });
+
+    // Typewriter
+    const lines = ['> INITIALIZING...', '> LOADING PROFILE...', '> HELLO, WORLD!', '> I BUILD GAMES.'];
+    let li = 0, ci = 0, del = false, paused = false;
+    const tw = document.getElementById('typewriter-text');
+    function type() {
+      if (paused) return;
+      const cur = lines[li];
+      if (!del) {
+        tw.textContent = cur.slice(0, ++ci);
+        if (ci === cur.length) { paused = true; setTimeout(() => { paused = false; del = true; type(); }, 1800); return; }
+        setTimeout(type, 55);
+      } else {
+        tw.textContent = cur.slice(0, --ci);
+        if (ci === 0) { del = false; li = (li + 1) % lines.length; }
+        setTimeout(type, 28);
+      }
+    }
+    type();
+
+    // Animate stat bars & XP on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.stat-bar').forEach(b => {
+        b.style.width = b.dataset.fill + '%';
+      });
+      document.querySelector('.xp-fill').style.width = '78%';
+    });
+
+    // Active nav
+    const secs = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+      document.querySelectorAll('.nav-link').forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
+      });
+    });
+  </script>
 </body>
 </html>
