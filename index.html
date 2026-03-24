@@ -40,6 +40,13 @@
 
   <!-- HERO / About -->
   <section id="about" class="about">
+    <div class="hero-bg-slideshow">
+  <div class="hero-bg-slide" style="background-image: url('Images/RoadKings.gif')"></div>
+  <div class="hero-bg-slide" style="background-image: url('Images/bigear.gif')"></div>
+  <div class="hero-bg-slide" style="background-image: url('Images/dragons-spite.gif')"></div>
+  <div class="hero-bg-slide" style="background-image: url('Images/crestforge-curse.gif')"></div>
+  <div class="hero-bg-slide" style="background-image: url('Images/sushi-cats.gif')"></div>
+</div>
     <div class="container">
       <div class="hero-grid">
 
@@ -132,9 +139,7 @@
               </div>
               <p class="card-role">[ PROGRAMMER ]</p>
               <ul class="card-bullets">
-                <li>▸ 3rd-person system w/ flying &amp; ground movement</li>
-                <li>▸ AI behavior tree for NPC villagers</li>
-                <li>▸ Combo system &amp; fireball combat</li>
+                <li>▸ Confidential </li>
               </ul>
             </div>
           </article>
@@ -154,11 +159,9 @@
                   <img src="Images/siteIcon.svg" alt="Site" />
                 </button>
               </div>
-              <p class="card-role">[ PROGRAMMER ]</p>
+              <p class="card-role">[ DESIGNER · ANIMATOR · PROGRAMMER ]</p>
               <ul class="card-bullets">
-                <li>▸ 3rd-person system w/ flying &amp; ground movement</li>
-                <li>▸ AI behavior tree for NPC villagers</li>
-                <li>▸ Combo system &amp; fireball combat</li>
+                <li>▸ Confidential </li>
               </ul>
             </div>
           </article>
@@ -336,9 +339,8 @@
         <div class="work-card" data-reveal>
           <div class="work-img"><img src="Images/saberwide.png" alt="Saber Interactive" /></div>
           <div class="work-body">
-            <div class="work-status active-status">● ACTIVE</div>
             <h3>SABER INTERACTIVE PORTO</h3>
-            <p class="work-role">PROGRAMMER INTERNSHIP</p>
+            <p class="work-role">PROGRAMMER</p>
             <p class="work-meta">AUG 2025 – PRESENT · PORTO, PORTUGAL</p>
             <div class="work-links">
               <button class="pixel-link" onclick="goToLink('https://saber.games/')">VISIT ▶</button>
@@ -351,12 +353,11 @@
         <div class="work-card" data-reveal>
           <div class="work-img"><img src="Images/bigear.png" alt="Big Ear Games" /></div>
           <div class="work-body">
-            <div class="work-status">● COMPLETED</div>
             <h3>BIG EAR GAMES</h3>
             <p class="work-role">DESIGNER · ANIMATOR · PROGRAMMER</p>
             <p class="work-meta">APR – JUL 2024 · HELSINKI, FINLAND (REMOTE)</p>
             <div class="work-links">
-              <button class="pixel-link" onclick="goToLink('https://bigeargames.com')">VISIT ▶</button>
+              <button class="pixel-link" onclick="goToLink('https://www.linkedin.com/company/big-ear-games-oy')">VISIT ▶</button>
               <button class="pixel-link"
                 onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">RECOMMENDATION
                 LETTER ↓</button>
@@ -406,8 +407,6 @@
             src="Images/itchio-textless-black.svg" alt="Itch.io" /><span>ITCH.IO</span></a>
         <a href="https://www.artstation.com/oddeven" class="contact-card" target="_blank"><img
             src="Images/artstation.png" alt="ArtStation" /><span>ARTSTATION</span></a>
-        <a href="https://x.com/Oddven" class="contact-card" target="_blank"><img src="Images/twitter.png"
-            alt="Twitter" /><span>TWITTER</span></a>
       </div>
     </div>
   </section>
@@ -524,6 +523,16 @@
       themeToggle.textContent = isLight ? '☾' : '☀';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
+    // Hero background slideshow
+const bgSlides = document.querySelectorAll('.hero-bg-slide');
+let bgIdx = 0;
+bgSlides[bgIdx].classList.add('active');
+
+setInterval(() => {
+  bgSlides[bgIdx].classList.remove('active');
+  bgIdx = (bgIdx + 1) % bgSlides.length;
+  bgSlides[bgIdx].classList.add('active');
+}, 4000);
   </script>
 </body>
 

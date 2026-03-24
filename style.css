@@ -316,10 +316,11 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero-grid {
@@ -1193,4 +1194,54 @@ body {
   .nav-links { display: none; }
   .hero-left { flex-direction: column; }
   .education-grid { grid-template-columns: 1fr; }
+}
+
+/* ===========================
+   Hero Background Slideshow
+=========================== */
+.hero-bg-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  filter: saturate(0) brightness(.25) contrast(1);
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+}
+
+/* Make sure hero content stays above */
+.hero-grid {
+  position: relative;
+  z-index: 1;
+}
+.hero-right {
+  background: rgba(10, 12, 15, 0.75);
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  padding: 1.75rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-left .stat-card {
+  background: rgba(10, 12, 15, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-left .sprite-frame {
+  box-shadow: 0 0 0 1px rgba(0,255,136,0.2), 
+              0 0 30px rgba(0,255,136,0.15), 
+              inset 0 0 20px rgba(0,0,0,0.5),
+              0 0 40px rgba(0,0,0,0.8);
 }
