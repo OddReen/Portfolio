@@ -13,7 +13,7 @@
   --orange:    #ff6b35;
   --orange-dim: rgba(255, 107, 53, 0.12);
   --text:      #c8d8c8;
-  --text-dim:  #5a7a5a;
+  --text-dim:  #abffab;
   --text-muted:#3a5040;
   --pixel:     'Press Start 2P', monospace;
   --mono:      'Share Tech Mono', monospace;
@@ -255,7 +255,7 @@ body {
   display: block;
   image-rendering: pixelated;
   filter: saturate(0.85) contrast(1.05);
-  transition: filter 0.4s ease;
+  transition: opacity 0.4s ease, filter 0.4s, transform 0.5s var(--ease);
 }
 
 .sprite-frame:hover .sprite-img {
@@ -1004,6 +1004,7 @@ body {
 }
 
 .contact-grid {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
