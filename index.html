@@ -17,7 +17,7 @@
 
   <div class="scanlines"></div>
   <div class="crt-vignette"></div>
-  
+
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
@@ -34,6 +34,7 @@
           <li><a href="#contact" class="nav-link">[ CONTACT ]</a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" id="themeToggle" title="TOGGLE DISPLAY">☀</button>
     </div>
   </header>
 
@@ -130,6 +131,11 @@
                 </button>
               </div>
               <p class="card-role">[ PROGRAMMER ]</p>
+              <ul class="card-bullets">
+                <li>▸ 3rd-person system w/ flying &amp; ground movement</li>
+                <li>▸ AI behavior tree for NPC villagers</li>
+                <li>▸ Combo system &amp; fireball combat</li>
+              </ul>
             </div>
           </article>
 
@@ -149,6 +155,11 @@
                 </button>
               </div>
               <p class="card-role">[ PROGRAMMER ]</p>
+              <ul class="card-bullets">
+                <li>▸ 3rd-person system w/ flying &amp; ground movement</li>
+                <li>▸ AI behavior tree for NPC villagers</li>
+                <li>▸ Combo system &amp; fireball combat</li>
+              </ul>
             </div>
           </article>
 
@@ -328,8 +339,13 @@
             <div class="work-status active-status">● ACTIVE</div>
             <h3>SABER INTERACTIVE PORTO</h3>
             <p class="work-role">PROGRAMMER INTERNSHIP</p>
-            <p class="work-meta">AUG 2025 – PRESENT · PORTO, PT</p>
-            <button class="pixel-link" onclick="goToLink('https://saber.games/')">VISIT ▶</button>
+            <p class="work-meta">AUG 2025 – PRESENT · PORTO, PORTUGAL</p>
+            <div class="work-links">
+              <button class="pixel-link" onclick="goToLink('https://saber.games/')">VISIT ▶</button>
+              <button class="pixel-link"
+                onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Saber Interactive Porto.pdf')">RECOMMENDATION
+                LETTER ↓</button>
+            </div>
           </div>
         </div>
         <div class="work-card" data-reveal>
@@ -338,11 +354,12 @@
             <div class="work-status">● COMPLETED</div>
             <h3>BIG EAR GAMES</h3>
             <p class="work-role">DESIGNER · ANIMATOR · PROGRAMMER</p>
-            <p class="work-meta">APR – JUL 2024 · HELSINKI, FI (REMOTE)</p>
+            <p class="work-meta">APR – JUL 2024 · HELSINKI, FINLAND (REMOTE)</p>
             <div class="work-links">
               <button class="pixel-link" onclick="goToLink('https://bigeargames.com')">VISIT ▶</button>
               <button class="pixel-link"
-                onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">LETTER ↓</button>
+                onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">RECOMMENDATION
+                LETTER ↓</button>
             </div>
           </div>
         </div>
@@ -478,7 +495,7 @@
       'Images/Eu.png',
       'Images/Eu4.jpg',
       'Images/Eu5.png',
-      'Images/Eu6.jpg',
+      // 'Images/Eu6.jpg',
     ];
     let heroIdx = 0;
     const spriteImg = document.querySelector('.sprite-img');
@@ -494,6 +511,19 @@
     }
 
     setInterval(nextHeroSlide, 5000);
+    // Light/dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+      themeToggle.textContent = '☾';
+    }
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      themeToggle.textContent = isLight ? '☾' : '☀';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
   </script>
 </body>
 

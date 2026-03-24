@@ -20,7 +20,102 @@
   --ease:      cubic-bezier(0.23, 1, 0.32, 1);
   --header-h:  90px;
 }
+/* ===========================
+   Light Mode
+=========================== */
+body.light-mode {
+  --bg:          #e8f0e8;
+  --surface:     #d4e4d4;
+  --surface-2:   #c8dcc8;
+  --border:      #8aaa8a;
+  --accent:      #007740;
+  --accent-2:    #0066aa;
+  --accent-dim:  rgba(0, 119, 64, 0.12);
+  --accent-glow: rgba(0, 119, 64, 0.3);
+  --text:        #1a2e1a;
+  --text-dim:    #2a4a2a;
+  --text-muted:  #4a6a4a;
+}
 
+body.light-mode .site-header {
+  background: rgba(232, 240, 232, 0.96);
+}
+
+body.light-mode .crt-vignette {
+  background: radial-gradient(ellipse at center,
+    transparent 55%,
+    rgba(255,255,255,0.3) 100%
+  );
+}
+
+body.light-mode .about::before {
+  background-image:
+    linear-gradient(rgba(0,119,64,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,119,64,0.06) 1px, transparent 1px);
+}
+
+body.light-mode .sprite-frame {
+  box-shadow: 0 0 0 1px rgba(0,119,64,0.3), 0 0 30px rgba(0,119,64,0.1), inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+body.light-mode .card-screen img,
+body.light-mode .sprite-img {
+  filter: saturate(1) contrast(1);
+}
+
+body.light-mode .contact-card img,
+body.light-mode .side-contact-item img {
+  filter: brightness(0) invert(0.1);
+}
+
+body.light-mode .contact-card:hover img,
+body.light-mode .side-contact-item:hover img {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(400%) hue-rotate(120deg);
+}
+
+body.light-mode .card-icon-btn img {
+  filter: brightness(0) invert(0.2);
+}
+
+body.light-mode .card-icon-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(400%) hue-rotate(120deg);
+}
+
+body.light-mode .ticker-inner,
+body.light-mode .edu-badge,
+body.light-mode .card-screen-badge,
+body.light-mode .pixel-button.primary {
+  color: #fff;
+}
+
+body.light-mode .dialogue-header {
+  background: var(--accent);
+}
+
+body.light-mode .dialogue-name,
+body.light-mode .dialogue-role {
+  color: #fff;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  font-family: var(--pixel);
+  font-size: 0.6rem;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  color: var(--accent);
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  box-shadow: 2px 2px 0 rgba(0,255,136,0.2);
+}
 /* ===========================
    Reset & Base
 =========================== */
@@ -852,7 +947,7 @@ body {
 }
 
 .work-img {
-  aspect-ratio: 16/5;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: #000;
 }
@@ -1020,7 +1115,8 @@ body {
   color: var(--text-dim);
   text-decoration: none;
   padding: 1.25rem 1.5rem;
-  min-width: 110px;
+  min-width: 100px;
+  max-width: 100px;
   font-family: var(--pixel);
   font-size: 0.38rem;
   letter-spacing: 0.08em;
