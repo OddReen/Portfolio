@@ -1220,7 +1220,6 @@ body {
   opacity: 1;
 }
 
-/* Make sure hero content stays above */
 .hero-grid {
   position: relative;
   z-index: 1;
