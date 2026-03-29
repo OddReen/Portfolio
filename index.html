@@ -41,12 +41,12 @@
   <!-- HERO / About -->
   <section id="about" class="about">
     <div class="hero-bg-slideshow">
-  <div class="hero-bg-slide" style="background-image: url('Images/RoadKings.gif')"></div>
-  <div class="hero-bg-slide" style="background-image: url('Images/bigear.gif')"></div>
-  <div class="hero-bg-slide" style="background-image: url('Images/dragons-spite.gif')"></div>
-  <div class="hero-bg-slide" style="background-image: url('Images/crestforge-curse.gif')"></div>
-  <div class="hero-bg-slide" style="background-image: url('Images/sushi-cats.gif')"></div>
-</div>
+      <div class="hero-bg-slide" style="background-image: url('Images/RoadKings.gif')"></div>
+      <div class="hero-bg-slide" style="background-image: url('Images/bigear.gif')"></div>
+      <div class="hero-bg-slide" style="background-image: url('Images/dragons-spite.gif')"></div>
+      <div class="hero-bg-slide" style="background-image: url('Images/crestforge-curse.gif')"></div>
+      <div class="hero-bg-slide" style="background-image: url('Images/sushi-cats.gif')"></div>
+    </div>
     <div class="container">
       <div class="hero-grid">
 
@@ -89,7 +89,8 @@
               Recently gained AAA experience at <span class="accent-text">Saber Interactive Porto</span>.
             </p>
             <p>
-              Had the opportunity to work remotely with <span class="accent-text">Big Ear Games</span> in Helsinki, Finland.
+              Had the opportunity to work remotely with <span class="accent-text">Big Ear Games</span> in Helsinki,
+              Finland.
             </p>
             <p>
               Is currently working on a personal project with procedural terrain generation.
@@ -103,11 +104,37 @@
             </p>
           </div>
 
-          <div class="hero-actions">
-            <a href="#projects" class="pixel-button primary">▶ VIEW PROJECTS</a>
-            <a href="#contact" class="pixel-button secondary">✉ CONTACT ME</a>
+<div class="hero-actions">
+  <a href="#projects" class="pixel-button primary">▶ VIEW PROJECTS</a>
+  <a href="#contact" class="pixel-button secondary">▶ CONTACT ME</a>
+</div>
+
+<div class="rec-wrap rec-wrap--full">
+  <button class="pixel-button rec-btn" onclick="toggleRecs()">▶ REFERENCES</button>
+  <div class="rec-popup" id="recPopup">
+                <div class="rec-popup-header">
+                  <span class="rec-popup-title">[ REFERENCES ]</span>
+                  <span class="rec-popup-close" onclick="toggleRecs()">✕</span>
+                </div>
+                <div class="rec-popup-item" onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Saber Interactive Porto.pdf')">
+                  <div class="rec-item-icon">S</div>
+                  <div class="rec-item-info">
+                    <span class="rec-item-name">SABER INTERACTIVE</span>
+                    <span class="rec-item-sub">PORTO · AAA STUDIO</span>
+                  </div>
+                  <span class="rec-item-arrow">↓</span>
+                </div>
+                <div class="rec-popup-item" onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">
+                  <div class="rec-item-icon">B</div>
+                  <div class="rec-item-info">
+                    <span class="rec-item-name">BIG EAR GAMES</span>
+                    <span class="rec-item-sub">HELSINKI · INDIE</span>
+                  </div>
+                  <span class="rec-item-arrow">↓</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
       </div>
     </div>
@@ -373,7 +400,8 @@
             <p class="work-role">DESIGNER · ANIMATOR · PROGRAMMER</p>
             <p class="work-meta">Apr 2024 - Jul 2024 · 4 months (REMOTE)</p>
             <div class="work-links">
-              <button class="pixel-link" onclick="goToLink('https://www.linkedin.com/company/big-ear-games-oy')">VISIT ▶</button>
+              <button class="pixel-link" onclick="goToLink('https://www.linkedin.com/company/big-ear-games-oy')">VISIT
+                ▶</button>
               <button class="pixel-link"
                 onclick="goToLink('Images/Leonardo Neves Recommendation Letter - Big Ear Games.pdf')">RECOMMENDATION
                 LETTER ↓</button>
@@ -540,15 +568,24 @@
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
     // Hero background slideshow
-const bgSlides = document.querySelectorAll('.hero-bg-slide');
-let bgIdx = 0;
-bgSlides[bgIdx].classList.add('active');
+    const bgSlides = document.querySelectorAll('.hero-bg-slide');
+    let bgIdx = 0;
+    bgSlides[bgIdx].classList.add('active');
 
-setInterval(() => {
-  bgSlides[bgIdx].classList.remove('active');
-  bgIdx = (bgIdx + 1) % bgSlides.length;
-  bgSlides[bgIdx].classList.add('active');
-}, 4000);
+    setInterval(() => {
+      bgSlides[bgIdx].classList.remove('active');
+      bgIdx = (bgIdx + 1) % bgSlides.length;
+      bgSlides[bgIdx].classList.add('active');
+    }, 4000);
+function toggleRecs() {
+  const p = document.getElementById('recPopup');
+  p.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.rec-wrap')) {
+    document.getElementById('recPopup').classList.remove('open');
+  }
+});
   </script>
 </body>
 

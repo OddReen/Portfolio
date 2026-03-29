@@ -538,6 +538,11 @@ body {
   flex-wrap: wrap;
 }
 
+.hero-actions .pixel-button {
+  flex: 1;
+  justify-content: center;
+}
+
 .pixel-button {
   font-family: var(--pixel);
   font-size: 0.5rem;
@@ -1243,4 +1248,149 @@ body {
               0 0 30px rgba(0,255,136,0.15), 
               inset 0 0 20px rgba(0,0,0,0.5),
               0 0 40px rgba(0,0,0,0.8);
+}
+/* ===========================
+   References Popup
+=========================== */
+.rec-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.pixel-button.rec-btn {
+  background: transparent;
+  color: var(--accent-2);
+  border: 2px solid var(--accent-2);
+  box-shadow: 4px 4px 0 rgba(0, 200, 255, 0.15);
+  font-family: var(--pixel);
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+
+.pixel-button.rec-btn:hover {
+  background: rgba(0, 200, 255, 0.08);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 200, 255, 0.25);
+}
+
+.rec-popup {
+  position: absolute;
+  top: calc(100% + 12px);
+  bottom: auto;
+  left: 0;
+  width: 260px;
+  background: var(--surface-2);
+  border: 2px solid var(--accent-2);
+  box-shadow: 6px 6px 0 rgba(0, 200, 255, 0.15), 0 0 30px rgba(0, 200, 255, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scaleY(0.95);
+  transform-origin: top left;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+  z-index: 200;
+}
+
+.rec-popup.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0) scaleY(1);
+}
+
+.rec-popup-header {
+  background: var(--accent-2);
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rec-popup-title {
+  font-family: var(--pixel);
+  font-size: 0.38rem;
+  color: #000;
+  letter-spacing: 0.08em;
+}
+
+.rec-popup-close {
+  font-family: var(--pixel);
+  font-size: 0.45rem;
+  color: rgba(0,0,0,0.5);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.rec-popup-close:hover {
+  color: #000;
+}
+
+.rec-popup-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.rec-popup-item:last-child {
+  border-bottom: none;
+}
+
+.rec-popup-item:hover {
+  background: rgba(0, 200, 255, 0.07);
+}
+
+.rec-popup-item:hover .rec-item-arrow {
+  color: var(--accent-2);
+  transform: translateY(2px);
+}
+
+.rec-item-icon {
+  font-family: var(--pixel);
+  font-size: 0.55rem;
+  color: #000;
+  background: var(--accent-2);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rec-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.rec-item-name {
+  font-family: var(--pixel);
+  font-size: 0.38rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.rec-item-sub {
+  font-family: var(--pixel);
+  font-size: 0.3rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.rec-item-arrow {
+  font-size: 0.75rem;
+  color: var(--border);
+  transition: color 0.15s, transform 0.15s;
+}
+.rec-wrap--full {
+  width: 100%;
+}
+
+.rec-wrap--full .rec-btn {
+  width: 100%;
+  justify-content: center;
 }
